@@ -1,0 +1,6 @@
+{
+  "name": "Digitaal Dagboek",
+  "description": "Een eenvoudig digitaal dagboek om dagelijkse notities vast te leggen en privé te bewaren.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
