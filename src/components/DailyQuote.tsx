@@ -90,7 +90,7 @@ export const DailyQuote: React.FC = () => {
             </h2>
           </div>
 
-          <span className="text-[11px] font-semibold text-stone-500 uppercase tracking-wider bg-white px-2.5 py-1 rounded-md border border-[#EADFCB]">
+          <span className="text-[11px] font-semibold text-stone-500 uppercase tracking-wider bg-[#F7F1E8] px-2.5 py-1 rounded-md border border-[#EADFCB]">
             Dagelijkse inspiratie
           </span>
         </div>
@@ -123,7 +123,7 @@ export const DailyQuote: React.FC = () => {
                 id="retry-quote-button"
                 type="button"
                 onClick={() => fetchQuote(true)}
-                className="self-start sm:self-center shrink-0 px-3 py-1 bg-white hover:bg-[#FFEBEE] text-[#C62828] border border-[#EF9A9A] rounded-lg text-xs font-semibold transition-colors cursor-pointer"
+                className="self-start sm:self-center shrink-0 px-3 py-1 bg-[#F7F1E8] hover:bg-[#FFEBEE] text-[#C62828] border border-[#EF9A9A] rounded-lg text-xs font-semibold transition-colors cursor-pointer"
               >
                 Opnieuw proberen
               </button>

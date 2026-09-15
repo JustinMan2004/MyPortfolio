@@ -144,7 +144,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
       </div>
 
       {/* Top Navbar */}
-      <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-stone-200/80 shadow-xs transition-all">
+      <header className="sticky top-0 z-40 bg-[#F7F1E8]/90 backdrop-blur-xl border-b border-stone-200/80 shadow-xs transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 gap-4">
             {/* Logo / Brand */}
@@ -314,7 +314,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
       />
 
       {/* Footer with secondary quick links */}
-      <footer className="bg-white border-t border-stone-200 py-6 mt-12">
+      <footer className="bg-[#F7F1E8] border-t border-stone-200 py-6 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div className="flex items-center gap-2">
             <span className="font-bold text-stone-800">{profile.name}</span>

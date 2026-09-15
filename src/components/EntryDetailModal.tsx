@@ -18,7 +18,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/40 p-4 backdrop-blur-xs">
-      <div className="w-full max-w-2xl max-h-[90vh] bg-white rounded-2xl border border-[#EADFCB] shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div className="w-full max-w-2xl max-h-[90vh] bg-[#F7F1E8] rounded-2xl border border-[#EADFCB] shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         {/* Header */}
         <div className="p-6 border-b border-[#EADFCB] bg-[#FAF8F5] flex items-start justify-between">
           <div>
@@ -71,7 +71,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
                 className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                   isFav
                     ? 'bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100'
-                    : 'bg-white text-stone-600 border-[#EADFCB] hover:bg-[#FAF8F5] hover:text-[#C62828]'
+                    : 'bg-[#F7F1E8] text-stone-600 border-[#EADFCB] hover:bg-[#FAF8F5] hover:text-[#C62828]'
                 }`}
               >
                 <Star className={`w-3.5 h-3.5 ${isFav ? 'fill-amber-400 text-amber-500' : 'text-stone-400'}`} />
@@ -83,7 +83,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
           {/* 4 Questions & Answers */}
           <div className="space-y-6">
             {/* Vraag 1 */}
-            <div className="bg-white border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
+            <div className="bg-[#F7F1E8] border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
               <h3 className="text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-[#FFEBEE] text-[#C62828] flex items-center justify-center font-bold text-xs">
                   1
@@ -96,7 +96,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
             </div>
 
             {/* Vraag 2 */}
-            <div className="bg-white border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
+            <div className="bg-[#F7F1E8] border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
               <h3 className="text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-[#FFEBEE] text-[#C62828] flex items-center justify-center font-bold text-xs">
                   2
@@ -109,7 +109,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
             </div>
 
             {/* Vraag 3 */}
-            <div className="bg-white border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
+            <div className="bg-[#F7F1E8] border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
               <h3 className="text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-[#FFEBEE] text-[#C62828] flex items-center justify-center font-bold text-xs">
                   3
@@ -122,7 +122,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
             </div>
 
             {/* Vraag 4 */}
-            <div className="bg-white border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
+            <div className="bg-[#F7F1E8] border border-[#EADFCB] rounded-xl p-4 shadow-2xs">
               <h3 className="text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-[#FFEBEE] text-[#C62828] flex items-center justify-center font-bold text-xs">
                   4
@@ -140,7 +140,7 @@ export const EntryDetailModal: React.FC<EntryDetailModalProps> = ({ entry, onClo
         <div className="p-4 border-t border-[#EADFCB] bg-[#FAF8F5] flex justify-end">
           <button
             onClick={onClose}
-            className="px-5 py-2 bg-white hover:bg-[#FAF8F5] text-stone-800 text-sm font-semibold rounded-xl border border-[#D5CEC5] transition-colors cursor-pointer"
+            className="px-5 py-2 bg-[#F7F1E8] hover:bg-[#FAF8F5] text-stone-800 text-sm font-semibold rounded-xl border border-[#D5CEC5] transition-colors cursor-pointer"
           >
             Sluiten
           </button>

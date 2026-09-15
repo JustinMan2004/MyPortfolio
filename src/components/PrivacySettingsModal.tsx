@@ -41,7 +41,7 @@ export const PrivacySettingsModal: React.FC<PrivacySettingsModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/40 p-4 backdrop-blur-xs">
-      <div className="w-full max-w-md bg-white rounded-2xl border border-[#EADFCB] shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div className="w-full max-w-md bg-[#F7F1E8] rounded-2xl border border-[#EADFCB] shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         <div className="p-6 border-b border-[#EADFCB] bg-[#FAF8F5] flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-[#FFEBEE] text-[#C62828] flex items-center justify-center">
@@ -80,7 +80,7 @@ export const PrivacySettingsModal: React.FC<PrivacySettingsModalProps> = ({
                 if (error) setError('');
               }}
               placeholder="Bijvoorbeeld: 1234"
-              className="w-full py-2.5 px-3.5 border border-[#D5CEC5] rounded-xl text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828]"
+              className="w-full py-2.5 px-3.5 border border-[#D5CEC5] rounded-xl text-stone-900 bg-[#F7F1E8] focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828]"
               autoFocus
             />
           </div>
@@ -100,7 +100,7 @@ export const PrivacySettingsModal: React.FC<PrivacySettingsModalProps> = ({
                 if (error) setError('');
               }}
               placeholder="Typ dezelfde code opnieuw"
-              className="w-full py-2.5 px-3.5 border border-[#D5CEC5] rounded-xl text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828]"
+              className="w-full py-2.5 px-3.5 border border-[#D5CEC5] rounded-xl text-stone-900 bg-[#F7F1E8] focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828]"
             />
           </div>
 

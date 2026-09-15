@@ -113,7 +113,7 @@ export const EntryList: React.FC<EntryListProps> = ({
       {/* Main Entries Section with Search, Filters & Favorites */}
       <section
         id="previous-entries-section"
-        className="bg-white border border-[#EADFCB] rounded-2xl shadow-xs overflow-hidden"
+        className="bg-[#F7F1E8] border border-[#EADFCB] rounded-2xl shadow-xs overflow-hidden"
       >
         {/* Header with tabs: Alle Notities vs Favorieten */}
         <div className="p-5 sm:p-6 border-b border-[#EADFCB] bg-[#FAF8F5] space-y-4">
@@ -138,7 +138,7 @@ export const EntryList: React.FC<EntryListProps> = ({
                 className={`inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-xl border transition-all shadow-2xs cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
                   downloadSuccess
                     ? 'bg-emerald-50 text-emerald-700 border-emerald-300'
-                    : 'bg-white hover:bg-[#FFEBEE] text-[#C62828] border-[#FFCDD2] hover:border-[#C62828]'
+                    : 'bg-[#F7F1E8] hover:bg-[#FFEBEE] text-[#C62828] border-[#FFCDD2] hover:border-[#C62828]'
                 }`}
                 title="Download alle dagboeknotities als Excel-bestand (.xlsx)"
               >
@@ -156,7 +156,7 @@ export const EntryList: React.FC<EntryListProps> = ({
               </button>
 
               {/* View Mode Switcher: Alle Notities vs ⭐ Favorieten */}
-              <div className="inline-flex p-1 bg-white rounded-xl border border-[#EADFCB]">
+              <div className="inline-flex p-1 bg-[#F7F1E8] rounded-xl border border-[#EADFCB]">
                 <button
                   id="filter-all-notes-btn"
                   type="button"
@@ -203,7 +203,7 @@ export const EntryList: React.FC<EntryListProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Zoeken op woorden in notities..."
-                className="w-full pl-9 pr-3.5 py-2 text-xs sm:text-sm bg-white border border-[#EADFCB] rounded-xl text-stone-900 placeholder:text-stone-400 focus:outline-hidden focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                className="w-full pl-9 pr-3.5 py-2 text-xs sm:text-sm bg-[#F7F1E8] border border-[#EADFCB] rounded-xl text-stone-900 placeholder:text-stone-400 focus:outline-hidden focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
               />
               {searchQuery && (
                 <button
@@ -224,7 +224,7 @@ export const EntryList: React.FC<EntryListProps> = ({
                 type="date"
                 value={dateFilter}
                 onChange={(e) => setDateFilter(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-white border border-[#EADFCB] rounded-xl text-stone-800 focus:outline-hidden focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm bg-[#F7F1E8] border border-[#EADFCB] rounded-xl text-stone-800 focus:outline-hidden focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
                 title="Filter op specifieke datum"
               />
             </div>
@@ -236,7 +236,7 @@ export const EntryList: React.FC<EntryListProps> = ({
                 id="mood-filter-select"
                 value={moodFilter}
                 onChange={(e) => setMoodFilter(e.target.value)}
-                className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm bg-white border border-[#EADFCB] rounded-xl text-stone-800 focus:outline-hidden focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828] appearance-none cursor-pointer"
+                className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm bg-[#F7F1E8] border border-[#EADFCB] rounded-xl text-stone-800 focus:outline-hidden focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828] appearance-none cursor-pointer"
               >
                 <option value="">Alle stemmingen</option>
                 {MOOD_OPTIONS.map((opt) => (
@@ -392,7 +392,7 @@ export const EntryList: React.FC<EntryListProps> = ({
                       <button
                         id={`view-entry-btn-${entry.id}`}
                         onClick={() => onSelectEntry(entry)}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold bg-white hover:bg-[#FFEBEE] text-[#C62828] border border-[#FFCDD2] hover:border-[#C62828] rounded-lg transition-colors shadow-2xs cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold bg-[#F7F1E8] hover:bg-[#FFEBEE] text-[#C62828] border border-[#FFCDD2] hover:border-[#C62828] rounded-lg transition-colors shadow-2xs cursor-pointer"
                       >
                         <Eye className="w-3.5 h-3.5 text-[#C62828]" />
                         <span>Bekijk notitie</span>

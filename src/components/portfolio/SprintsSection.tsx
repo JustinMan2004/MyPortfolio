@@ -34,7 +34,7 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
             Overzicht van de Acht Sprints
           </h2>
         </div>
-        <p className="text-xs text-stone-700 bg-white px-3 py-1.5 rounded-xl border border-[#EADFCB]">
+        <p className="text-xs text-stone-700 bg-[#F7F1E8] px-3 py-1.5 rounded-xl border border-[#EADFCB]">
           Klik op een sprint om direct gerelateerde stories en bewijzen te zien
         </p>
       </div>
@@ -52,8 +52,8 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
               onClick={() => onSelectSprint(sprint.number)}
               className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-4 ${
                 isSelected
-                  ? 'bg-white border-[#A92222] shadow-md ring-2 ring-[#A92222]/20'
-                  : 'bg-white hover:bg-[#FAF7F2] border-[#EADFCB]'
+                  ? 'bg-[#F7F1E8] border-[#A92222] shadow-md ring-2 ring-[#A92222]/20'
+                  : 'bg-[#F7F1E8] hover:bg-[#FAF7F2] border-[#EADFCB]'
               }`}
             >
               <div className="space-y-3">

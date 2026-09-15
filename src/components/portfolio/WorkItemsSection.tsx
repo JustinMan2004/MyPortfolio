@@ -246,7 +246,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
   return (
     <section id="work-items-section" className="space-y-6">
       {/* Header Banner */}
-      <div className="p-6 sm:p-7 bg-white rounded-3xl border border-stone-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div className="p-6 sm:p-7 bg-[#F7F1E8] rounded-3xl border border-stone-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
         <div className="space-y-1.5 max-w-2xl">
           <div className="flex items-center gap-2 text-[#941F1F] font-bold text-xs uppercase tracking-wider">
             <FolderGit2 className="w-4 h-4" />
@@ -274,7 +274,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
       </div>
 
       {/* Interactive Sprint Filter Strip */}
-      <div className="bg-white p-4 sm:p-5 rounded-3xl border border-stone-200 shadow-2xs space-y-3">
+      <div className="bg-[#F7F1E8] p-4 sm:p-5 rounded-3xl border border-stone-200 shadow-2xs space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
             <Layers className="w-3.5 h-3.5 text-[#941F1F]" />
@@ -341,7 +341,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
             placeholder="Zoek in wat je gemaakt hebt, titels, tools..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3.5 py-2.5 text-xs bg-white border border-stone-200 rounded-2xl text-stone-900 focus:outline-hidden focus:border-[#941F1F] shadow-2xs"
+            className="w-full pl-9 pr-3.5 py-2.5 text-xs bg-[#F7F1E8] border border-stone-200 rounded-2xl text-stone-900 focus:outline-hidden focus:border-[#941F1F] shadow-2xs"
           />
           <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
         </div>
@@ -358,7 +358,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
             className={`cursor-pointer px-3 py-1.5 text-xs font-bold rounded-xl transition-all ${
               selectedOutcomeFilter === 'all'
                 ? 'bg-stone-900 text-white shadow-2xs'
-                : 'bg-white border border-stone-200 text-stone-600 hover:bg-stone-50'
+                : 'bg-[#F7F1E8] border border-stone-200 text-stone-600 hover:bg-stone-50'
             }`}
           >
             Alle
@@ -376,7 +376,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                 className={`cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl transition-all border ${
                   isSelected
                     ? 'bg-emerald-700 text-white border-emerald-700 shadow-2xs'
-                    : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
+                    : 'bg-[#F7F1E8] border-stone-200 text-stone-700 hover:bg-stone-50'
                 }`}
                 title={o.title}
               >
@@ -397,7 +397,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
       {/* Work Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {filteredWorkItems.length === 0 ? (
-          <div className="col-span-1 md:col-span-2 p-12 text-center bg-white rounded-3xl border border-stone-200 space-y-3">
+          <div className="col-span-1 md:col-span-2 p-12 text-center bg-[#F7F1E8] rounded-3xl border border-stone-200 space-y-3">
             <p className="text-stone-600 font-medium text-sm">
               Geen stukken werk gevonden voor deze selectie.
             </p>
@@ -419,7 +419,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
             return (
               <div
                 key={item.id}
-                className="p-5 sm:p-6 bg-white rounded-3xl border border-stone-200 shadow-2xs hover:shadow-md hover:border-stone-300 transition-all duration-200 flex flex-col justify-between space-y-4"
+                className="p-5 sm:p-6 bg-[#F7F1E8] rounded-3xl border border-stone-200 shadow-2xs hover:shadow-md hover:border-stone-300 transition-all duration-200 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3.5">
                   {/* Card Top Metadata & Controls */}
@@ -586,7 +586,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
       {/* Add / Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/50 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl border border-stone-200 shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-7 space-y-5">
+          <div className="bg-[#F7F1E8] rounded-3xl border border-stone-200 shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-7 space-y-5">
             <div className="flex items-center justify-between border-b border-stone-100 pb-3">
               <div className="flex items-center gap-2">
                 <FolderGit2 className="w-5 h-5 text-[#941F1F]" />
@@ -620,7 +620,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                   placeholder="bijv. Digitaal Dagboek Prototype (Sprint 2)"
                   value={formTitle}
                   onChange={(e) => setFormTitle(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                  className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                 />
               </div>
 
@@ -634,7 +634,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                   placeholder="Beschrijf wat je precies gebouwd, onderzocht of opgeleverd hebt..."
                   value={formWhatMade}
                   onChange={(e) => setFormWhatMade(e.target.value)}
-                  className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                  className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                 />
               </div>
 
@@ -646,7 +646,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                   <select
                     value={formSprint}
                     onChange={(e) => setFormSprint(Number(e.target.value))}
-                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((s) => (
                       <option key={s} value={s}>
@@ -663,7 +663,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                   <select
                     value={formType}
                     onChange={(e) => setFormType(e.target.value as WorkItemType)}
-                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                   >
                     {WORK_TYPES.map((t) => (
                       <option key={t} value={t}>
@@ -683,7 +683,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                   placeholder="bijv. Google AI Studio, React 19, Gemini 3.8 Flash, SheetJS"
                   value={formHowMade}
                   onChange={(e) => setFormHowMade(e.target.value)}
-                  className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                  className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                 />
               </div>
 
@@ -703,7 +703,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                         className={`cursor-pointer p-2 rounded-xl text-left border transition-all ${
                           isChecked
                             ? 'bg-emerald-700 text-white border-emerald-700 shadow-2xs'
-                            : 'bg-white hover:bg-stone-100 text-stone-700 border-stone-200'
+                            : 'bg-[#F7F1E8] hover:bg-stone-100 text-stone-700 border-stone-200'
                         }`}
                       >
                         <div className="flex items-center justify-between">
@@ -733,7 +733,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                     placeholder="https://... of #diary"
                     value={formUrl}
                     onChange={(e) => setFormUrl(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                    className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                   />
                 </div>
 
@@ -746,7 +746,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                     placeholder="https://github.com/..."
                     value={formGithubUrl}
                     onChange={(e) => setFormGithubUrl(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#941F1F]"
+                    className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                   />
                 </div>
               </div>

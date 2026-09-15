@@ -55,7 +55,7 @@ export const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
               onClick={() => setSelectedCategory(cat)}
               className={`cursor-pointer px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                 selectedCategory === cat
-                  ? 'bg-white text-[#A92222] shadow-xs'
+                  ? 'bg-[#F7F1E8] text-[#A92222] shadow-xs'
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
@@ -69,7 +69,7 @@ export const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
         {filteredTools.map((tool) => (
           <div
             key={tool.id}
-            className="p-6 bg-white rounded-3xl border border-[#EADFCB] shadow-xs hover:border-[#A92222]/40 transition-all space-y-4 flex flex-col justify-between"
+            className="p-6 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-xs hover:border-[#A92222]/40 transition-all space-y-4 flex flex-col justify-between"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between gap-2">

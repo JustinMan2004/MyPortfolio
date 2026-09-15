@@ -33,7 +33,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           </p>
         </div>
 
-        <span className="text-xs text-stone-600 bg-white px-3 py-1.5 rounded-xl border border-[#EADFCB] font-medium shrink-0">
+        <span className="text-xs text-stone-600 bg-[#F7F1E8] px-3 py-1.5 rounded-xl border border-[#EADFCB] font-medium shrink-0">
           {projects.length} Gerealiseerde oplossingen
         </span>
       </div>
@@ -42,7 +42,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {projects.map((project) => (
           <div
             key={project.id}
-            className="p-6 md:p-7 bg-white rounded-3xl border border-[#EADFCB] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-5"
+            className="p-6 md:p-7 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-5"
           >
             <div className="space-y-4">
               {/* Header */}

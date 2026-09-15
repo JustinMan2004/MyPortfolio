@@ -170,7 +170,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                   e.target.value === 'all' ? 'all' : Number(e.target.value)
                 )
               }
-              className="text-xs bg-white border border-[#EADFCB] rounded-xl px-3 py-1.5 font-medium text-stone-800 focus:outline-hidden focus:border-[#A92222]"
+              className="text-xs bg-[#F7F1E8] border border-[#EADFCB] rounded-xl px-3 py-1.5 font-medium text-stone-800 focus:outline-hidden focus:border-[#A92222]"
             >
               <option value="all">Alle sprints (1 t/m 8)</option>
               {[1, 2, 3, 4, 5, 6, 7, 8].map((s) => (
@@ -185,7 +185,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
 
       {/* Add Custom Story Form */}
       {isAdding && onAddStory && (
-        <div className="p-6 bg-white rounded-3xl border-2 border-[#A92222]/30 shadow-md space-y-4">
+        <div className="p-6 bg-[#F7F1E8] rounded-3xl border-2 border-[#A92222]/30 shadow-md space-y-4">
           <div className="flex items-center justify-between border-b border-[#EADFCB] pb-3">
             <h3 className="font-bold text-base text-stone-900 flex items-center gap-2">
               <Plus className="w-4 h-4 text-[#A92222]" />
@@ -209,7 +209,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                 <select
                   value={formType}
                   onChange={(e) => setFormType(e.target.value as StoryType)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                 >
                   <option value="Research Story">Research Story</option>
                   <option value="User Story">User Story</option>
@@ -222,7 +222,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                 <select
                   value={formSprint}
                   onChange={(e) => setFormSprint(Number(e.target.value))}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((s) => (
                     <option key={s} value={s}>
@@ -239,7 +239,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                   placeholder="AI, Gemini, Prototyping"
                   value={formTags}
                   onChange={(e) => setFormTags(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                 />
               </div>
             </div>
@@ -252,7 +252,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                 placeholder="bijv. Onderzoek naar AI Studio capabilities voor portfolio"
                 value={formTitle}
                 onChange={(e) => setFormTitle(e.target.value)}
-                className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
               />
             </div>
 
@@ -265,7 +265,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                   placeholder="Wat was de aanleiding of uitdaging?"
                   value={formContext}
                   onChange={(e) => setFormContext(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
               </div>
 
@@ -277,7 +277,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                   placeholder="Wat heb je gedaan / getest / gebouwd?"
                   value={formApproach}
                   onChange={(e) => setFormApproach(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
               </div>
 
@@ -289,7 +289,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                   placeholder="Wat is het resultaat of inzicht?"
                   value={formOutcome}
                   onChange={(e) => setFormOutcome(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
               </div>
             </div>
@@ -340,7 +340,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
             onClick={() => setActiveType('all')}
             className={`cursor-pointer px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeType === 'all'
-                ? 'bg-white text-[#A92222] shadow-xs'
+                ? 'bg-[#F7F1E8] text-[#A92222] shadow-xs'
                 : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -351,7 +351,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
             onClick={() => setActiveType('Research Story')}
             className={`cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeType === 'Research Story'
-                ? 'bg-white text-blue-700 shadow-xs'
+                ? 'bg-[#F7F1E8] text-blue-700 shadow-xs'
                 : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -363,7 +363,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
             onClick={() => setActiveType('User Story')}
             className={`cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeType === 'User Story'
-                ? 'bg-white text-emerald-700 shadow-xs'
+                ? 'bg-[#F7F1E8] text-emerald-700 shadow-xs'
                 : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -375,7 +375,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
             onClick={() => setActiveType('Learning Story')}
             className={`cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeType === 'Learning Story'
-                ? 'bg-white text-purple-700 shadow-xs'
+                ? 'bg-[#F7F1E8] text-purple-700 shadow-xs'
                 : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -392,14 +392,14 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
             placeholder="Zoek in verhalen of tags..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-8 pr-3 py-1.5 bg-white border border-[#EADFCB] rounded-xl text-xs placeholder:text-stone-400 focus:outline-hidden focus:border-[#A92222]"
+            className="w-full pl-8 pr-3 py-1.5 bg-[#F7F1E8] border border-[#EADFCB] rounded-xl text-xs placeholder:text-stone-400 focus:outline-hidden focus:border-[#A92222]"
           />
         </div>
       </div>
 
       {/* Stories Listing */}
       {filteredStories.length === 0 ? (
-        <div className="p-12 text-center bg-white rounded-3xl border border-[#EADFCB] text-stone-500 text-xs">
+        <div className="p-12 text-center bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] text-stone-500 text-xs">
           Geen stories gevonden voor het gekozen filter of zoekterm.
         </div>
       ) : (
@@ -407,7 +407,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
           {filteredStories.map((story) => (
             <div
               key={story.id}
-              className="p-5 md:p-6 bg-white rounded-3xl border border-[#EADFCB] shadow-xs hover:border-[#A92222]/30 transition-all space-y-3"
+              className="p-5 md:p-6 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-xs hover:border-[#A92222]/30 transition-all space-y-3"
             >
               {/* Card Header */}
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#FAF7F2] pb-3">

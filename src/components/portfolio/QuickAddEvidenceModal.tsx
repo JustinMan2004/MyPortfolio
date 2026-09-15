@@ -94,7 +94,7 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-xs animate-in fade-in duration-150">
       <div
-        className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden"
+        className="relative w-full max-w-xl bg-[#F7F1E8] rounded-3xl shadow-2xl border border-stone-200 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -164,7 +164,7 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
                 placeholder="bijv. Prototype Digitale Dagboek - Vibe-coding"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full px-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] transition-colors"
+                className="w-full px-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] transition-colors"
               />
             </div>
 
@@ -179,7 +179,7 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
                   placeholder="https://github.com/... of https://..."
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
-                  className="w-full pl-9 pr-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] transition-colors"
+                  className="w-full pl-9 pr-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] transition-colors"
                 />
                 <Link2 className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-2.5" />
               </div>
@@ -248,7 +248,7 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
               placeholder="Wat toont dit bewijsstuk aan voor je sprint of beoordeling?"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full px-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none transition-colors"
+              className="w-full px-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none transition-colors"
             />
           </div>
 

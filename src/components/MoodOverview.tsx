@@ -42,7 +42,7 @@ export const MoodOverview: React.FC<MoodOverviewProps> = ({
           </div>
         </div>
 
-        <span className="text-xs font-semibold px-2.5 py-1 bg-white text-stone-800 rounded-full border border-[#EADFCB]">
+        <span className="text-xs font-semibold px-2.5 py-1 bg-[#F7F1E8] text-stone-800 rounded-full border border-[#EADFCB]">
           {totalEntries} {totalEntries === 1 ? 'keer ingevuld' : 'notities totaal'}
         </span>
       </div>
@@ -69,7 +69,7 @@ export const MoodOverview: React.FC<MoodOverviewProps> = ({
               className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-between gap-1.5 ${
                 isSelected
                   ? 'bg-[#FFEBEE] border-[#C62828] ring-2 ring-[#C62828]/20 shadow-xs'
-                  : 'bg-white hover:bg-[#F2EFE9] border-[#EADFCB] hover:border-[#EF9A9A]'
+                  : 'bg-[#F7F1E8] hover:bg-[#F2EFE9] border-[#EADFCB] hover:border-[#EF9A9A]'
               }`}
               title={`Klik om te filteren op '${moodOpt.label}' (${count}x gekozen)`}
             >

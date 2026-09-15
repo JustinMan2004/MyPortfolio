@@ -22,7 +22,7 @@ export const LockScreen: React.FC<LockScreenProps> = ({ correctPin, onUnlock }) 
   };
 
   return (
-    <div id="lock-screen-container" className="min-h-screen bg-white flex items-center justify-center p-4">
+    <div id="lock-screen-container" className="min-h-screen bg-[#F7F1E8] flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-[#FAF8F5] border border-[#EADFCB] rounded-2xl shadow-sm p-8 text-center">
         <div className="w-16 h-16 bg-[#FFEBEE] text-[#C62828] rounded-full flex items-center justify-center mx-auto mb-5 border border-[#FFCDD2]">
           <Lock className="w-8 h-8" />
@@ -53,7 +53,7 @@ export const LockScreen: React.FC<LockScreenProps> = ({ correctPin, onUnlock }) 
                   if (error) setError('');
                 }}
                 placeholder="••••"
-                className="w-full text-center text-2xl tracking-[0.4em] py-3 px-4 border border-[#D5CEC5] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-stone-900 bg-white"
+                className="w-full text-center text-2xl tracking-[0.4em] py-3 px-4 border border-[#D5CEC5] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-stone-900 bg-[#F7F1E8]"
               />
             </div>
             {error && (

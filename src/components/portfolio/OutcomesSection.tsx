@@ -63,7 +63,7 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
         </div>
 
         {/* Global Progress Pill */}
-        <div className="p-3 bg-white rounded-2xl border border-[#EADFCB] flex items-center gap-3 shrink-0 shadow-xs">
+        <div className="p-3 bg-[#F7F1E8] rounded-2xl border border-[#EADFCB] flex items-center gap-3 shrink-0 shadow-xs">
           <div className="space-y-0.5">
             <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
               Totale Voortgang
@@ -94,13 +94,13 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
             Per 2-wekelijkse sprint presenteer je tijdens de <strong>Show & Tell</strong> minimaal 3 bewijzen van verschillende leeruitkomsten. Voor het eindassessment geldt:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-            <div className="p-2.5 bg-white rounded-xl border border-[#EADFCB]">
+            <div className="p-2.5 bg-[#F7F1E8] rounded-xl border border-[#EADFCB]">
               <span className="font-bold text-stone-800 block text-[11px]">🎯 Op Niveau (Voldoende):</span>
               <span className="text-[11px] text-stone-600">
                 Minimaal 24x een leeruitkomst laten beoordelen met minimaal LU1: 2x, LU2: 4x, LU3: 2x, LU4: 4x, LU5: 6x. Maximaal 1 sprint gemist.
               </span>
             </div>
-            <div className="p-2.5 bg-white rounded-xl border border-[#EADFCB]">
+            <div className="p-2.5 bg-[#F7F1E8] rounded-xl border border-[#EADFCB]">
               <span className="font-bold text-emerald-800 block text-[11px]">⭐ Boven Niveau (Goed):</span>
               <span className="text-[11px] text-stone-600">
                 Minimaal 24x voldoende, geen sprint gemist, proactieve kennisdeling en overtuigende diepgang in de opdrachten.
@@ -124,7 +124,7 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
           return (
             <div
               key={outcome.id}
-              className="p-6 bg-white rounded-3xl border border-[#EADFCB] shadow-xs hover:border-[#A92222]/30 transition-all space-y-4"
+              className="p-6 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-xs hover:border-[#A92222]/30 transition-all space-y-4"
             >
               {/* Outcome Header Bar */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -224,7 +224,7 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
                         {linkedEvidences.map((ev) => (
                           <div
                             key={ev.id}
-                            className="bg-white p-3 rounded-2xl border border-stone-200 shadow-2xs space-y-1.5"
+                            className="bg-[#F7F1E8] p-3 rounded-2xl border border-stone-200 shadow-2xs space-y-1.5"
                           >
                             <div className="flex items-center justify-between gap-2">
                               <div className="flex items-center gap-2">

@@ -47,7 +47,7 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({ feedbacks }) =
                 e.target.value === 'all' ? 'all' : Number(e.target.value)
               )
             }
-            className="text-xs bg-white border border-[#EADFCB] rounded-xl px-3 py-1.5 font-medium text-stone-800 focus:outline-hidden focus:border-[#A92222]"
+            className="text-xs bg-[#F7F1E8] border border-[#EADFCB] rounded-xl px-3 py-1.5 font-medium text-stone-800 focus:outline-hidden focus:border-[#A92222]"
           >
             <option value="all">Alle feedbackrondes</option>
             <option value={1}>Sprint 1</option>
@@ -61,7 +61,7 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({ feedbacks }) =
         {filteredFeedbacks.map((item) => (
           <div
             key={item.id}
-            className="p-6 md:p-8 bg-white rounded-3xl border border-[#EADFCB] shadow-xs space-y-6"
+            className="p-6 md:p-8 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-xs space-y-6"
           >
             {/* Source & Header */}
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#FAF7F2] pb-4">
@@ -137,7 +137,7 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({ feedbacks }) =
                 {item.evidenceItems.map((evidence, idx) => (
                   <div
                     key={idx}
-                    className="p-3 bg-white rounded-xl border border-[#EADFCB] flex items-start gap-2.5"
+                    className="p-3 bg-[#F7F1E8] rounded-xl border border-[#EADFCB] flex items-start gap-2.5"
                   >
                     <FileCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <div className="space-y-0.5">

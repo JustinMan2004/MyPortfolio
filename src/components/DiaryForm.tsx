@@ -55,7 +55,7 @@ export const DiaryForm: React.FC<DiaryFormProps> = ({ onAddEntry }) => {
   };
 
   return (
-    <section id="new-entry-form-section" className="bg-white border border-[#EADFCB] rounded-2xl shadow-xs overflow-hidden">
+    <section id="new-entry-form-section" className="bg-[#F7F1E8] border border-[#EADFCB] rounded-2xl shadow-xs overflow-hidden">
       <div className="p-6 border-b border-[#EADFCB] bg-[#FAF8F5]">
         <h2 className="font-serif text-xl font-bold text-[#C62828] mb-1">
           Nieuwe dagboeknotitie
@@ -79,7 +79,7 @@ export const DiaryForm: React.FC<DiaryFormProps> = ({ onAddEntry }) => {
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full py-2.5 px-3.5 border border-[#D5CEC5] rounded-xl text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm"
+              className="w-full py-2.5 px-3.5 border border-[#D5CEC5] rounded-xl text-stone-900 bg-[#F7F1E8] focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm"
               required
             />
           </div>
@@ -130,7 +130,7 @@ export const DiaryForm: React.FC<DiaryFormProps> = ({ onAddEntry }) => {
                 if (errorMessage) setErrorMessage('');
               }}
               placeholder="Beschrijf je activiteiten, nieuwe inzichten of vaardigheden..."
-              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-white"
+              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-[#F7F1E8]"
             />
           </div>
 
@@ -149,7 +149,7 @@ export const DiaryForm: React.FC<DiaryFormProps> = ({ onAddEntry }) => {
                 if (errorMessage) setErrorMessage('');
               }}
               placeholder="Successen, fijne momenten of dingen waar je trots of tevreden over bent..."
-              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-white"
+              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-[#F7F1E8]"
             />
           </div>
 
@@ -168,7 +168,7 @@ export const DiaryForm: React.FC<DiaryFormProps> = ({ onAddEntry }) => {
                 if (errorMessage) setErrorMessage('');
               }}
               placeholder="Tegenslagen, lastige momenten of dingen die anders liepen dan gehoopt..."
-              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-white"
+              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-[#F7F1E8]"
             />
           </div>
 
@@ -187,7 +187,7 @@ export const DiaryForm: React.FC<DiaryFormProps> = ({ onAddEntry }) => {
                 if (errorMessage) setErrorMessage('');
               }}
               placeholder="Een les, inzicht, herinnering of gedachte voor later..."
-              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-white"
+              className="w-full p-3 border border-[#D5CEC5] rounded-xl text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#C62828]/20 focus:border-[#C62828] text-sm resize-y placeholder:text-stone-500 bg-[#F7F1E8]"
             />
           </div>
         </div>

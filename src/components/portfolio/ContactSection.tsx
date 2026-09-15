@@ -57,7 +57,7 @@ export const ContactSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Direct Links & Info */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="p-6 bg-white rounded-3xl border border-[#EADFCB] shadow-xs space-y-5">
+          <div className="p-6 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-xs space-y-5">
             <h3 className="font-bold text-base text-stone-900">
               Directe Contactkanalen
             </h3>
@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
                 href={`mailto:${STUDENT_PROFILE.email}`}
                 className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-[#FFF3F0] border border-[#EADFCB] hover:border-[#FFCDD2] transition-all group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white text-[#A92222] flex items-center justify-center border border-[#EADFCB] group-hover:border-[#FFCDD2]">
+                <div className="w-10 h-10 rounded-xl bg-[#F7F1E8] text-[#A92222] flex items-center justify-center border border-[#EADFCB] group-hover:border-[#FFCDD2]">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -89,7 +89,7 @@ export const ContactSection: React.FC = () => {
                 rel="noreferrer"
                 className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-[#FAF7F2]/80 border border-[#EADFCB] hover:border-stone-400 transition-all group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white text-stone-900 flex items-center justify-center border border-[#EADFCB]">
+                <div className="w-10 h-10 rounded-xl bg-[#F7F1E8] text-stone-900 flex items-center justify-center border border-[#EADFCB]">
                   <Github className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -110,7 +110,7 @@ export const ContactSection: React.FC = () => {
                 rel="noreferrer"
                 className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-blue-50/50 border border-[#EADFCB] hover:border-blue-200 transition-all group"
               >
-                <div className="w-10 h-10 rounded-xl bg-white text-blue-700 flex items-center justify-center border border-[#EADFCB]">
+                <div className="w-10 h-10 rounded-xl bg-[#F7F1E8] text-blue-700 flex items-center justify-center border border-[#EADFCB]">
                   <Linkedin className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
 
         {/* Right Column: Contact Form */}
         <div className="lg:col-span-7">
-          <div className="p-6 md:p-8 bg-white rounded-3xl border border-[#EADFCB] shadow-xs space-y-4">
+          <div className="p-6 md:p-8 bg-[#F7F1E8] rounded-3xl border border-[#EADFCB] shadow-xs space-y-4">
             <h3 className="font-bold text-base text-stone-900">
               Stuur een Direct Bericht
             </h3>
@@ -189,7 +189,7 @@ export const ContactSection: React.FC = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                      className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                     />
                   </div>
 
@@ -209,7 +209,7 @@ export const ContactSection: React.FC = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                      className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                     />
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, subject: e.target.value })
                     }
-                    className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                    className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                   />
                 </div>
 
@@ -248,7 +248,7 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                    className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                   />
                 </div>
 

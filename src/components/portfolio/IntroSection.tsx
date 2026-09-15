@@ -135,7 +135,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
               </div>
             )}
             <div className="absolute -bottom-2 -right-2 bg-emerald-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full border-2 border-[#721414] shadow-md flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F7F1E8] animate-pulse" />
               <span>Student HU</span>
             </div>
           </div>
@@ -188,7 +188,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 id="hero-view-sprints-btn"
                 type="button"
                 onClick={onNavigateToSprints}
-                className="cursor-pointer inline-flex items-center gap-2 bg-white text-[#941F1F] hover:bg-[#FFF3F0] font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5 active:translate-y-0"
+                className="cursor-pointer inline-flex items-center gap-2 bg-[#F7F1E8] text-[#941F1F] hover:bg-[#FFF3F0] font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md transition-all hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Layers className="w-4 h-4" />
                 <span>Bekijk de 8 Sprints</span>
@@ -199,7 +199,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 <button
                   type="button"
                   onClick={onNavigateToEvidence}
-                  className="cursor-pointer inline-flex items-center gap-2 bg-[#FFF3F0] text-[#941F1F] hover:bg-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all hover:-translate-y-0.5 active:translate-y-0"
+                  className="cursor-pointer inline-flex items-center gap-2 bg-[#FFF3F0] text-[#941F1F] hover:bg-[#F7F1E8] font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xs transition-all hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <FolderGit2 className="w-4 h-4" />
                   <span>Mijn Werk &amp; Bewijzen</span>
@@ -252,7 +252,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
 
       {/* Edit Form Modal/Card when user wants to customize their story */}
       {isEditing && (
-        <div className="bg-white rounded-3xl p-6 md:p-8 border-2 border-[#A92222]/30 shadow-md space-y-4">
+        <div className="bg-[#F7F1E8] rounded-3xl p-6 md:p-8 border-2 border-[#A92222]/30 shadow-md space-y-4">
           <div className="flex items-center justify-between border-b border-[#EADFCB] pb-3">
             <div>
               <h3 className="font-bold text-base text-stone-900 flex items-center gap-2">
@@ -280,7 +280,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                   type="text"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                 />
               </div>
 
@@ -320,7 +320,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                   placeholder="Of voer een foto URL in (https://...)"
                   value={editAvatarUrl}
                   onChange={(e) => setEditAvatarUrl(e.target.value)}
-                  className="w-full px-3.5 py-1.5 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                  className="w-full px-3.5 py-1.5 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                 />
               </div>
             </div>
@@ -331,7 +331,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 rows={2}
                 value={editBio}
                 onChange={(e) => setEditBio(e.target.value)}
-                className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
               />
             </div>
 
@@ -342,7 +342,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                   rows={3}
                   value={editWhoAmI}
                   onChange={(e) => setEditWhoAmI(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
               </div>
 
@@ -352,7 +352,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                   rows={3}
                   value={editPassions}
                   onChange={(e) => setEditPassions(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
               </div>
             </div>
@@ -364,7 +364,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                   rows={3}
                   value={editWhyMinor}
                   onChange={(e) => setEditWhyMinor(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222] resize-none"
+                  className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
               </div>
 
@@ -404,7 +404,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                   placeholder="Of voer een foto URL in (https://...)"
                   value={editPhotoUrl}
                   onChange={(e) => setEditPhotoUrl(e.target.value)}
-                  className="w-full px-3.5 py-1.5 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-white focus:outline-hidden focus:border-[#A92222]"
+                  className="w-full px-3.5 py-1.5 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222]"
                 />
                 <p className="text-[11px] text-stone-500">
                   Tip: Upload een eigen foto vanaf je apparaat of vul een URL in.
@@ -434,7 +434,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
       )}
 
       {/* Persoonlijk Verhaal & Wie ik ben (Opdracht 2) */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6">
+      <div className="bg-[#F7F1E8] rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-100 pb-5">
           <div>
             <div className="flex items-center gap-2 text-[#941F1F] font-bold text-xs uppercase tracking-wider">
@@ -518,7 +518,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
       </div>
 
       {/* Persoonlijke Leerdoelen Sectie */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6">
+      <div className="bg-[#F7F1E8] rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-100 pb-5">
           <div>
             <div className="flex items-center gap-2 text-[#941F1F] font-bold text-xs uppercase tracking-wider">
@@ -538,14 +538,14 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
           {profile.learningGoals.map((goal, idx) => (
             <div
               key={goal.id}
-              className="p-5 sm:p-6 rounded-2xl bg-stone-50/70 border border-stone-200/80 hover:border-[#941F1F]/50 hover:bg-white hover:shadow-md transition-all duration-200 space-y-3 flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-stone-50/70 border border-stone-200/80 hover:border-[#941F1F]/50 hover:bg-[#F7F1E8] hover:shadow-md transition-all duration-200 space-y-3 flex flex-col justify-between"
             >
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between gap-2">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#A92222]/10 text-[#A92222]">
                     Doel #{idx + 1} • {goal.category}
                   </span>
-                  <span className="text-xs font-semibold text-stone-600 bg-white px-2.5 py-0.5 rounded-md border border-stone-200/90 shadow-2xs">
+                  <span className="text-xs font-semibold text-stone-600 bg-[#F7F1E8] px-2.5 py-0.5 rounded-md border border-stone-200/90 shadow-2xs">
                     {goal.targetSprint}
                   </span>
                 </div>

@@ -43,7 +43,7 @@ export const DiaryApp: React.FC<DiaryAppProps> = ({
   }
 
   return (
-    <div className="min-h-screen bg-white text-stone-900 flex flex-col selection:bg-[#FFEBEE] selection:text-[#C62828]">
+    <div className="min-h-screen bg-[#F7F1E8] text-stone-900 flex flex-col selection:bg-[#FFEBEE] selection:text-[#C62828]">
       {/* Top Header */}
       <header className="bg-[#FAF8F5] border-b border-[#EADFCB] sticky top-0 z-30">
         <div className="max-w-5xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
@@ -52,7 +52,7 @@ export const DiaryApp: React.FC<DiaryAppProps> = ({
               <button
                 type="button"
                 onClick={onBackToPortfolio}
-                className="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-[#FAF7F2] text-stone-700 border border-[#EADFCB] transition-all shadow-2xs mr-1"
+                className="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl bg-[#F7F1E8] hover:bg-[#FAF7F2] text-stone-700 border border-[#EADFCB] transition-all shadow-2xs mr-1"
                 title="Terug naar de Portfolio website"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
