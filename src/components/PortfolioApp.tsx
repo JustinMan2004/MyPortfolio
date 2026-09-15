@@ -58,13 +58,9 @@ export type PortfolioTab =
   | 'outcomes'
   | 'contact';
 
-interface PortfolioAppProps {
-  onSwitchToDiaryApp?: () => void;
-}
+interface PortfolioAppProps {}
 
-export const PortfolioApp: React.FC<PortfolioAppProps> = ({
-  onSwitchToDiaryApp,
-}) => {
+export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
   const [activeTab, setActiveTab] = useState<PortfolioTab>('intro');
   const [selectedSprintFilter, setSelectedSprintFilter] = useState<number | 'all'>('all');
   const [isQuickAddOpen, setIsQuickAddOpen] = useState(false);
@@ -189,26 +185,12 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveTab('evidence')}
-                className="cursor-pointer hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-700 border border-stone-200/90 transition-all shadow-2xs"
+                className="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-700 border border-stone-200/90 transition-all shadow-2xs"
                 title="Naar Mijn Werk & Bewijzen"
               >
                 <FolderGit2 className="w-3.5 h-3.5 text-[#941F1F]" />
                 <span>Mijn Werk ({evidenceLinks.length})</span>
               </button>
-
-              {onSwitchToDiaryApp && (
-                <button
-                  id="open-diary-mode-btn"
-                  type="button"
-                  onClick={onSwitchToDiaryApp}
-                  className="cursor-pointer inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-bold rounded-xl bg-[#FFF1EE] text-[#941F1F] hover:bg-[#FFE6E1] border border-[#FFCDD2] transition-all shadow-2xs hover:shadow-xs active:scale-[0.98]"
-                  title="Wissel naar het Digitale Dagboek prototype (Sprint 2)"
-                >
-                  <BookOpen className="w-3.5 h-3.5 text-[#941F1F]" />
-                  <span className="hidden md:inline">Open Dagboek App</span>
-                  <span className="md:hidden">Dagboek</span>
-                </button>
-              )}
             </div>
           </div>
 
@@ -269,7 +251,6 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = ({
             onAddEvidenceLink={handleAddEvidenceLink}
             onUpdateEvidenceLink={handleUpdateEvidenceLink}
             onDeleteEvidenceLink={handleDeleteEvidenceLink}
-            onOpenDiaryApp={onSwitchToDiaryApp}
             onSelectSprintFilter={handleSelectSprint}
           />
         )}
@@ -302,7 +283,6 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = ({
         {activeTab === 'projects' && (
           <ProjectsSection
             projects={PROJECTS_DATA}
-            onOpenDiaryApp={onSwitchToDiaryApp}
           />
         )}
 

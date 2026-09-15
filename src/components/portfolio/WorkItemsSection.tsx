@@ -25,7 +25,6 @@ interface WorkItemsSectionProps {
   onAddWorkItem: (item: WorkItem) => void;
   onUpdateWorkItem: (item: WorkItem) => void;
   onDeleteWorkItem: (id: string) => void;
-  onOpenDiaryApp?: () => void;
   initialSprintFilter?: number | 'all';
 }
 
@@ -45,7 +44,6 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
   onAddWorkItem,
   onUpdateWorkItem,
   onDeleteWorkItem,
-  onOpenDiaryApp,
   initialSprintFilter = 'all',
 }) => {
   const [selectedSprintFilter, setSelectedSprintFilter] = useState<number | 'all'>(
@@ -553,17 +551,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                   </span>
 
                   <div className="flex items-center gap-2">
-                    {/* Live diary or external url */}
-                    {item.url === '#diary' && onOpenDiaryApp ? (
-                      <button
-                        type="button"
-                        onClick={onOpenDiaryApp}
-                        className="cursor-pointer inline-flex items-center gap-1.5 font-bold text-[#941F1F] bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-xl border border-[#FFCDD2] transition-all"
-                      >
-                        <BookOpen className="w-3.5 h-3.5" />
-                        <span>Open Dagboek App</span>
-                      </button>
-                    ) : item.url && item.url !== '#stories' && item.url !== '#feedback' ? (
+                    {item.url && item.url !== '#stories' && item.url !== '#feedback' && item.url !== '#projects' ? (
                       <a
                         href={item.url}
                         target={item.url.startsWith('http') ? '_blank' : '_self'}

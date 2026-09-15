@@ -12,12 +12,10 @@ import { ProjectSolution } from '../../portfolioTypes';
 
 interface ProjectsSectionProps {
   projects: ProjectSolution[];
-  onOpenDiaryApp?: () => void;
 }
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   projects,
-  onOpenDiaryApp,
 }) => {
   return (
     <section id="projects-section" className="space-y-6">
@@ -123,17 +121,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* Links & CTA */}
             <div className="pt-4 border-t border-[#EADFCB] flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                {project.id === 'project-1' && onOpenDiaryApp && (
-                  <button
-                    type="button"
-                    onClick={onOpenDiaryApp}
-                    className="cursor-pointer inline-flex items-center gap-2 bg-[#A92222] hover:bg-[#8B1A1A] text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs transition-all"
-                  >
-                    <BookOpen className="w-3.5 h-3.5" />
-                    <span>Open Live Dagboek App</span>
-                  </button>
-                )}
-                {project.demoUrl && project.id !== 'project-1' && (
+                {project.demoUrl && (
                   <a
                     href={project.demoUrl}
                     target="_blank"
