@@ -1,6 +1,6 @@
 {
   "name": "Digitaal Dagboek",
-  "description": "Een eenvoudig digitaal dagboek om dagelijkse notities vast te leggen en privé te bewaren.",
+  "description": "Portfoliowebsite voor de minor Futureproof met AI, inclusief 8 sprints, stories, leeruitkomsten en het Digitale Dagboek prototype.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

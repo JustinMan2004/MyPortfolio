@@ -102,3 +102,86 @@ export function getTodayDateString(): string {
   const day = String(now.getDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
 }
+
+const STORAGE_KEY_PROFILE = 'minor_portfolio_profile_v1';
+const STORAGE_KEY_STORIES = 'minor_portfolio_stories_v1';
+const STORAGE_KEY_EVIDENCE = 'minor_portfolio_evidence_v1';
+
+export function loadProfile<T>(fallback: T): T {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY_PROFILE);
+    if (!stored) return fallback;
+    const parsed = JSON.parse(stored);
+    return { ...fallback, ...parsed };
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveProfile<T>(profile: T): void {
+  try {
+    localStorage.setItem(STORAGE_KEY_PROFILE, JSON.stringify(profile));
+  } catch (err) {
+    console.error('Kon profiel niet opslaan:', err);
+  }
+}
+
+export function loadStoredStories<T>(fallback: T[]): T[] {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY_STORIES);
+    if (!stored) return fallback;
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveStoredStories<T>(stories: T[]): void {
+  try {
+    localStorage.setItem(STORAGE_KEY_STORIES, JSON.stringify(stories));
+  } catch (err) {
+    console.error('Kon stories niet opslaan:', err);
+  }
+}
+
+export function loadWorkItems<T>(fallback: T[]): T[] {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY_EVIDENCE);
+    if (!stored) {
+      localStorage.setItem(STORAGE_KEY_EVIDENCE, JSON.stringify(fallback));
+      return fallback;
+    }
+    const parsed = JSON.parse(stored);
+    if (Array.isArray(parsed) && parsed.length > 0) {
+      // Migrate items if needed: ensure learningOutcomeCodes and whatMade are set
+      const migrated = parsed.map((item: any) => {
+        const codes = Array.isArray(item.learningOutcomeCodes) && item.learningOutcomeCodes.length > 0
+          ? item.learningOutcomeCodes
+          : item.learningOutcomeCode
+          ? [item.learningOutcomeCode]
+          : ['LU-1'];
+        return {
+          ...item,
+          learningOutcomeCodes: codes,
+          whatMade: item.whatMade || item.description || 'Geen omschrijving opgegeven.',
+        };
+      });
+      return migrated;
+    }
+    return fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveWorkItems<T>(items: T[]): void {
+  try {
+    localStorage.setItem(STORAGE_KEY_EVIDENCE, JSON.stringify(items));
+  } catch (err) {
+    console.error('Kon werkstukken niet opslaan:', err);
+  }
+}
+
+export const loadEvidenceLinks = loadWorkItems;
+export const saveEvidenceLinks = saveWorkItems;
