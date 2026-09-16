@@ -22,7 +22,7 @@ import {
   Upload,
   Image as ImageIcon,
 } from 'lucide-react';
-import { StudentProfile } from '../../portfolioTypes';
+import { LearningGoal, StudentProfile } from '../../portfolioTypes';
 
 interface IntroSectionProps {
   profile: StudentProfile;
@@ -49,6 +49,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
   const [editPhotoUrl, setEditPhotoUrl] = useState(profile.personalStory?.photoUrl || '');
   const [editAvatarUrl, setEditAvatarUrl] = useState(profile.avatarUrl || '');
   const [editName, setEditName] = useState(profile.name);
+  const [editLearningGoals, setEditLearningGoals] = useState<LearningGoal[]>(profile.learningGoals || []);
 
   const avatarFileInputRef = useRef<HTMLInputElement>(null);
   const photoFileInputRef = useRef<HTMLInputElement>(null);
@@ -92,6 +93,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
         photoUrl: editPhotoUrl.trim() || profile.personalStory.photoUrl,
         funFacts: profile.personalStory?.funFacts || [],
       },
+      learningGoals: editLearningGoals.filter((goal) => goal.title.trim() || goal.description.trim()),
     });
     setIsEditing(false);
   };
@@ -104,7 +106,28 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
     setEditWhyMinor(profile.personalStory?.whyThisMinor || '');
     setEditPhotoUrl(profile.personalStory?.photoUrl || '');
     setEditAvatarUrl(profile.avatarUrl || '');
+    setEditLearningGoals(profile.learningGoals || []);
     setIsEditing(false);
+  };
+
+  const updateLearningGoal = (id: string, field: keyof LearningGoal, value: string) => {
+    setEditLearningGoals((goals) => goals.map((goal) => (
+      goal.id === id ? { ...goal, [field]: value } : goal
+    )));
+  };
+
+  const addLearningGoal = () => {
+    setEditLearningGoals((goals) => [...goals, {
+      id: `learning-goal-${Date.now()}`,
+      title: '',
+      description: '',
+      targetSprint: '',
+      category: 'Methodologie',
+    }]);
+  };
+
+  const removeLearningGoal = (id: string) => {
+    setEditLearningGoals((goals) => goals.filter((goal) => goal.id !== id));
   };
 
   return (
@@ -412,6 +435,62 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
               </div>
             </div>
 
+            <div className="space-y-3 border-t border-[#EADFCB] pt-4">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <label className="text-xs font-bold text-stone-700 block">Mijn leerdoelen</label>
+                  <p className="text-[11px] text-stone-500">Voeg alleen doelen toe die je zelf wilt bijhouden.</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={addLearningGoal}
+                  className="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FAF7F2] text-[#A92222] font-bold text-xs border border-[#EADFCB]"
+                >
+                  <span>+</span> Doel toevoegen
+                </button>
+              </div>
+              {editLearningGoals.map((goal, index) => (
+                <div key={goal.id} className="grid grid-cols-1 md:grid-cols-12 gap-2 p-3 rounded-xl bg-[#FAF7F2] border border-[#EADFCB]">
+                  <input
+                    value={goal.title}
+                    onChange={(event) => updateLearningGoal(goal.id, 'title', event.target.value)}
+                    placeholder={`Leerdoel ${index + 1}`}
+                    className="md:col-span-5 px-3 py-2 text-xs bg-white border border-[#EADFCB] rounded-lg"
+                  />
+                  <input
+                    value={goal.description}
+                    onChange={(event) => updateLearningGoal(goal.id, 'description', event.target.value)}
+                    placeholder="Korte omschrijving"
+                    className="md:col-span-4 px-3 py-2 text-xs bg-white border border-[#EADFCB] rounded-lg"
+                  />
+                  <input
+                    value={goal.targetSprint}
+                    onChange={(event) => updateLearningGoal(goal.id, 'targetSprint', event.target.value)}
+                    placeholder="Bijv. Sprint 1 - 3"
+                    className="md:col-span-2 px-3 py-2 text-xs bg-white border border-[#EADFCB] rounded-lg"
+                  />
+                  <select
+                    value={goal.category}
+                    onChange={(event) => updateLearningGoal(goal.id, 'category', event.target.value)}
+                    className="md:col-span-2 px-3 py-2 text-xs bg-white border border-[#EADFCB] rounded-lg"
+                  >
+                    <option value="Technisch">Technisch</option>
+                    <option value="Design & UX">Design &amp; UX</option>
+                    <option value="Ethiek & Impact">Ethiek &amp; Impact</option>
+                    <option value="Methodologie">Methodologie</option>
+                  </select>
+                  <button
+                    type="button"
+                    onClick={() => removeLearningGoal(goal.id)}
+                    title="Leerdoel verwijderen"
+                    className="md:col-span-1 px-2 py-2 text-xs font-bold text-stone-500 hover:text-red-700"
+                  >
+                    Verwijder
+                  </button>
+                </div>
+              ))}
+            </div>
+
             <div className="flex justify-end gap-2 pt-2 border-t border-[#EADFCB]">
               <button
                 type="button"
@@ -530,7 +609,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
             </h2>
           </div>
           <span className="text-xs text-stone-700 bg-stone-50 px-3 py-1.5 rounded-xl border border-stone-200 font-semibold shadow-2xs">
-            4 Geformuleerde doelen
+            {profile.learningGoals.length} Geformuleerde doelen
           </span>
         </div>
 

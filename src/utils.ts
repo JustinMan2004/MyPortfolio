@@ -104,8 +104,9 @@ export function getTodayDateString(): string {
 }
 
 const STORAGE_KEY_PROFILE = 'minor_portfolio_profile_v1';
-const STORAGE_KEY_STORIES = 'minor_portfolio_stories_v1';
-const STORAGE_KEY_EVIDENCE = 'minor_portfolio_evidence_v1';
+const STORAGE_KEY_STORIES = 'minor_portfolio_stories_v2';
+const STORAGE_KEY_EVIDENCE = 'minor_portfolio_evidence_v2';
+const STORAGE_KEY_SPRINT_STATUS = 'minor_portfolio_sprint_status_v1';
 
 export function loadProfile<T>(fallback: T): T {
   try {
@@ -185,3 +186,22 @@ export function saveWorkItems<T>(items: T[]): void {
 
 export const loadEvidenceLinks = loadWorkItems;
 export const saveEvidenceLinks = saveWorkItems;
+
+export function loadSprintStatuses(): Record<number, boolean> {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY_SPRINT_STATUS);
+    if (!stored) return {};
+    const parsed = JSON.parse(stored);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveSprintStatuses(statuses: Record<number, boolean>): void {
+  try {
+    localStorage.setItem(STORAGE_KEY_SPRINT_STATUS, JSON.stringify(statuses));
+  } catch (err) {
+    console.error('Sprintstatussen konden niet worden opgeslagen:', err);
+  }
+}

@@ -41,9 +41,16 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
     }
   };
 
-  // Average progress
   const averageProgress = Math.round(
-    outcomes.reduce((acc, curr) => acc + curr.progressPercentage, 0) / outcomes.length
+    outcomes.reduce((acc, outcome) => {
+      const evidenceCount = evidenceLinks.filter((evidence) => {
+        const codes = evidence.learningOutcomeCodes ||
+          (evidence.learningOutcomeCode ? [evidence.learningOutcomeCode] : []);
+        return codes.includes(outcome.code);
+      }).length;
+      const requiredEvidence = outcome.requiredMinPass || 1;
+      return acc + Math.min(100, Math.round((evidenceCount / requiredEvidence) * 100));
+    }, 0) / outcomes.length
   );
 
   return (
@@ -119,7 +126,14 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
               (ev.learningOutcomeCode ? [ev.learningOutcomeCode] : []);
             return codes.includes(outcome.code);
           });
-          const totalEvCount = outcome.linkedEvidenceCount + linkedEvidences.length;
+          const totalEvCount = linkedEvidences.length;
+          const requiredEvidence = outcome.requiredMinPass || 1;
+          const progressPercentage = Math.min(
+            100,
+            Math.round((totalEvCount / requiredEvidence) * 100)
+          );
+          const currentStatus: LearningOutcome['status'] =
+            progressPercentage >= 100 ? 'Aangetoond' : 'In ontwikkeling';
 
           return (
             <div
@@ -139,10 +153,10 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
                     <div className="flex flex-wrap items-center gap-2 mt-0.5">
                       <span
                         className={`text-[11px] font-bold px-2 py-0.5 rounded-md border ${statusColor(
-                          outcome.status
+                          currentStatus
                         )}`}
                       >
-                        {outcome.status}
+                        {currentStatus}
                       </span>
                       {outcome.requiredMinPass && (
                         <span className="text-[10px] bg-stone-100 text-stone-700 font-bold px-2 py-0.5 rounded-md border border-stone-200">
@@ -161,12 +175,12 @@ export const OutcomesSection: React.FC<OutcomesSectionProps> = ({
                   <div className="flex-1 space-y-1">
                     <div className="flex justify-between text-[11px] font-bold text-stone-700">
                       <span>Niveau</span>
-                      <span>{outcome.progressPercentage}%</span>
+                      <span>{progressPercentage}%</span>
                     </div>
                     <div className="w-full h-2 bg-[#FAF7F2] rounded-full overflow-hidden border border-[#EADFCB]">
                       <div
                         className="h-full bg-emerald-600 rounded-full"
-                        style={{ width: `${outcome.progressPercentage}%` }}
+                        style={{ width: `${progressPercentage}%` }}
                       />
                     </div>
                   </div>

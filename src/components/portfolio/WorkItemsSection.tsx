@@ -36,6 +36,16 @@ const WORK_TYPES: WorkItemType[] = [
   'Figma / Design',
   'Prompt Systeem',
   'Overig',
+  'PDF',
+  'Downloadbaar document',
+  'Excel-bestand',
+  'Word-bestand',
+  'Afbeelding / screenshot',
+  'Video',
+  'GitHub-link',
+  'Externe website',
+  'Portfoliolink',
+  'Andere URL',
 ];
 
 export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({

@@ -12,6 +12,7 @@ import {
   Link2,
   Sparkles,
   Plus,
+  Bot,
 } from 'lucide-react';
 import {
   STUDENT_PROFILE,
@@ -30,6 +31,8 @@ import {
   saveStoredStories,
   loadEvidenceLinks,
   saveEvidenceLinks,
+  loadSprintStatuses,
+  saveSprintStatuses,
 } from '../utils';
 import {
   StudentProfile,
@@ -46,9 +49,14 @@ import { OutcomesSection } from './portfolio/OutcomesSection';
 import { ContactSection } from './portfolio/ContactSection';
 import { QuickAddEvidenceModal } from './portfolio/QuickAddEvidenceModal';
 import { EvidenceSection } from './portfolio/EvidenceSection';
+import { Chatbot } from './Chatbot';
+import { HomeSection } from './portfolio/HomeSection';
+import { SprintDetailSection } from './portfolio/SprintDetailSection';
 
 export type PortfolioTab =
+  | 'home'
   | 'intro'
+  | 'sprintDetail'
   | 'evidence'
   | 'sprints'
   | 'stories'
@@ -61,7 +69,7 @@ export type PortfolioTab =
 interface PortfolioAppProps {}
 
 export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
-  const [activeTab, setActiveTab] = useState<PortfolioTab>('intro');
+  const [activeTab, setActiveTab] = useState<PortfolioTab>('home');
   const [selectedSprintFilter, setSelectedSprintFilter] = useState<number | 'all'>('all');
   const [isQuickAddOpen, setIsQuickAddOpen] = useState(false);
 
@@ -69,12 +77,14 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
   const [profile, setProfile] = useState<StudentProfile>(() =>
     loadProfile<StudentProfile>(STUDENT_PROFILE)
   );
-  const [stories, setStories] = useState<StoryItem[]>(() =>
-    loadStoredStories<StoryItem>(STORIES_DATA)
-  );
-  const [evidenceLinks, setEvidenceLinks] = useState<EvidenceLink[]>(() =>
-    loadEvidenceLinks<EvidenceLink>(INITIAL_EVIDENCE_LINKS)
-  );
+  const [stories, setStories] = useState<StoryItem[]>(() => loadStoredStories<StoryItem>([]));
+  const [evidenceLinks, setEvidenceLinks] = useState<EvidenceLink[]>(() => loadEvidenceLinks<EvidenceLink>([]));
+  const [sprintStatuses, setSprintStatuses] = useState<Record<number, boolean>>(() => loadSprintStatuses());
+
+  const sprints = SPRINTS_DATA.map((sprint) => ({
+    ...sprint,
+    status: sprintStatuses[sprint.number] ? 'Afgerond' as const : 'Gepland' as const,
+  }));
 
   // Sync with localStorage
   useEffect(() => {
@@ -89,9 +99,20 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
     saveEvidenceLinks(evidenceLinks);
   }, [evidenceLinks]);
 
+  useEffect(() => {
+    saveSprintStatuses(sprintStatuses);
+  }, [sprintStatuses]);
+
   const handleSelectSprint = (sprintNumber: number) => {
     setSelectedSprintFilter(sprintNumber);
-    setActiveTab('stories');
+    setActiveTab('sprintDetail');
+  };
+
+  const handleToggleSprintComplete = (sprintNumber: number) => {
+    setSprintStatuses((previous) => ({
+      ...previous,
+      [sprintNumber]: !previous[sprintNumber],
+    }));
   };
 
   const handleNavigateToStoriesForOutcome = (outcomeId: number) => {
@@ -129,11 +150,13 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
 
   // Focused, essential tabs without clutter
   const navItems = [
-    { id: 'intro' as const, label: 'Profiel & Verhaal', icon: User },
-    { id: 'evidence' as const, label: 'Mijn Werk & Bewijzen', icon: FolderGit2, badge: `${evidenceLinks.length}` },
-    { id: 'sprints' as const, label: '8 Sprints', icon: Layers },
-    { id: 'outcomes' as const, label: '5 Leeruitkomsten', icon: Award },
+    { id: 'home' as const, label: 'Home', icon: Layers },
+    { id: 'sprints' as const, label: 'Sprints', icon: Layers },
+    { id: 'outcomes' as const, label: 'Leeruitkomsten', icon: Award },
+    { id: 'intro' as const, label: 'Over mij', icon: User },
+    { id: 'evidence' as const, label: 'Bewijsbank', icon: FolderGit2, badge: `${evidenceLinks.length}` },
     { id: 'stories' as const, label: 'Stories', icon: FileText, badge: `${stories.length}` },
+    { id: 'chatbot' as const, label: 'Chatbot', icon: Bot },
   ];
 
   return (
@@ -233,6 +256,18 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
 
       {/* Main Content Body */}
       <main className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {activeTab === 'home' && (
+          <HomeSection
+            profile={profile}
+            sprints={sprints}
+            evidenceCount={evidenceLinks.length}
+            storyCount={stories.length}
+            onNavigateToSprints={() => setActiveTab('sprints')}
+            onSelectSprint={handleSelectSprint}
+            onToggleSprintComplete={handleToggleSprintComplete}
+          />
+        )}
+
         {activeTab === 'intro' && (
           <IntroSection
             profile={profile}
@@ -241,6 +276,19 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
             onNavigateToProjects={() => setActiveTab('projects')}
             onNavigateToContact={() => setActiveTab('contact')}
             onNavigateToEvidence={() => setActiveTab('evidence')}
+          />
+        )}
+
+        {activeTab === 'sprintDetail' && selectedSprintFilter !== 'all' && (
+          <SprintDetailSection
+            sprint={sprints.find((item) => item.number === selectedSprintFilter) || sprints[0]}
+            stories={stories.filter((story) => story.sprintNumber === selectedSprintFilter)}
+            evidenceLinks={evidenceLinks.filter((item) => item.sprintNumber === selectedSprintFilter)}
+            outcomes={LEARNING_OUTCOMES}
+            feedbacks={FEEDBACK_REFLECTIONS_DATA.filter((item) => item.sprintNumber === selectedSprintFilter)}
+            onBack={() => setActiveTab('sprints')}
+            onAddEvidence={() => setIsQuickAddOpen(true)}
+            onToggleComplete={() => handleToggleSprintComplete(selectedSprintFilter)}
           />
         )}
 
@@ -257,7 +305,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
 
         {activeTab === 'sprints' && (
           <SprintsSection
-            sprints={SPRINTS_DATA}
+            sprints={sprints}
             selectedSprintNumber={
               selectedSprintFilter === 'all' ? 2 : selectedSprintFilter
             }
@@ -267,6 +315,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
             onViewSprintDetail={(sprintNum) => {
               handleSelectSprint(sprintNum);
             }}
+            onToggleSprintComplete={handleToggleSprintComplete}
           />
         )}
 
@@ -302,6 +351,8 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
         )}
 
         {activeTab === 'contact' && <ContactSection />}
+
+        {activeTab === 'chatbot' && <Chatbot />}
       </main>
 
       {/* Global Quick Add Evidence Modal */}

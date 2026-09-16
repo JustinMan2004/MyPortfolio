@@ -4,7 +4,7 @@ import "dotenv/config";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 async function startServer() {
   const app = express();
@@ -75,6 +75,54 @@ async function startServer() {
       }
       return res.status(500).json({
         error: userFriendlyMessage,
+      });
+    }
+  });
+
+  app.post("/api/chat", async (req, res) => {
+    const { apiKey, messages } = req.body ?? {};
+
+    if (typeof apiKey !== "string" || !apiKey.trim()) {
+      return res.status(400).json({ error: "Voer eerst je Gemini API-key in." });
+    }
+
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return res.status(400).json({ error: "Stuur minstens één bericht mee." });
+    }
+
+    try {
+      const ai = new GoogleGenAI({ apiKey: apiKey.trim() });
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: messages
+          .filter(
+            (message): message is { role: "user" | "model"; text: string } =>
+              (message?.role === "user" || message?.role === "model") &&
+              typeof message?.text === "string" &&
+              message.text.trim().length > 0
+          )
+          .map((message) => ({
+            role: message.role,
+            parts: [{ text: message.text }],
+          })),
+        config: {
+          systemInstruction:
+            "Je bent een korte, behulpzame portfolio-assistent. Antwoord in het Nederlands en help met vragen over Justin zijn portfolio, projecten en AI-ontwikkeling.",
+        },
+      });
+
+      const text = response.text?.trim();
+      if (!text) {
+        return res.status(500).json({ error: "De chatbot gaf geen antwoord." });
+      }
+
+      return res.json({ text });
+    } catch (err: any) {
+      console.error("Fout bij chatbot:", err);
+      const providerMessage =
+        typeof err?.message === "string" ? err.message : "Onbekende API-fout";
+      return res.status(500).json({
+        error: `Google Gemini gaf een fout: ${providerMessage}`,
       });
     }
   });

@@ -31,6 +31,9 @@ export interface StoryItem {
   tags: string[];
   date: string;
   linkedOutcomeIds: number[];
+  acceptanceCriteria?: string[];
+  qualityCriteria?: string[];
+  status?: 'Gepland' | 'In uitvoering' | 'Afgerond';
 }
 
 export interface ProjectSolution {
@@ -92,7 +95,17 @@ export type WorkItemType =
   | 'Show & Tell Presentatie'
   | 'Figma / Design'
   | 'Prompt Systeem'
-  | 'Overig';
+  | 'Overig'
+  | 'PDF'
+  | 'Downloadbaar document'
+  | 'Excel-bestand'
+  | 'Word-bestand'
+  | 'Afbeelding / screenshot'
+  | 'Video'
+  | 'GitHub-link'
+  | 'Externe website'
+  | 'Portfoliolink'
+  | 'Andere URL';
 
 export interface WorkItem {
   id: string;

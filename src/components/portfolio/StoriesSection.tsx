@@ -39,6 +39,8 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
   const [formContext, setFormContext] = useState('');
   const [formApproach, setFormApproach] = useState('');
   const [formOutcome, setFormOutcome] = useState('');
+  const [formAcceptanceCriteria, setFormAcceptanceCriteria] = useState<string[]>(['', '', '']);
+  const [formQualityCriteria, setFormQualityCriteria] = useState<string[]>(['', '', '']);
   const [formTags, setFormTags] = useState('');
   const [formOutcomeIds, setFormOutcomeIds] = useState<number[]>([1]);
   const [error, setError] = useState('');
@@ -110,6 +112,8 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
           .filter(Boolean),
         date: new Date().toISOString().split('T')[0],
         linkedOutcomeIds: formOutcomeIds.length > 0 ? formOutcomeIds : [1],
+        acceptanceCriteria: formAcceptanceCriteria.map((criterion) => criterion.trim()).filter(Boolean),
+        qualityCriteria: formQualityCriteria.map((criterion) => criterion.trim()).filter(Boolean),
       };
       onAddStory(newStory);
     }
@@ -119,6 +123,8 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
     setFormContext('');
     setFormApproach('');
     setFormOutcome('');
+    setFormAcceptanceCriteria(['', '', '']);
+    setFormQualityCriteria(['', '', '']);
     setFormTags('');
     setIsAdding(false);
   };
@@ -291,6 +297,42 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                   onChange={(e) => setFormOutcome(e.target.value)}
                   className="w-full px-3.5 py-2 text-xs bg-[#FAF7F2] border border-[#EADFCB] rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] resize-none"
                 />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2 p-4 rounded-xl bg-[#FAF7F2] border border-[#EADFCB]">
+                <div>
+                  <label className="text-xs font-bold text-stone-700 block">Acceptatiecriteria</label>
+                  <p className="text-[11px] text-stone-500">Vul drie criteria in waaraan deze story moet voldoen.</p>
+                </div>
+                {formAcceptanceCriteria.map((criterion, index) => (
+                  <input
+                    key={`acceptance-${index}`}
+                    type="text"
+                    value={criterion}
+                    onChange={(event) => setFormAcceptanceCriteria((current) => current.map((item, itemIndex) => itemIndex === index ? event.target.value : item))}
+                    placeholder={`Acceptatiecriterium ${index + 1}`}
+                    className="w-full px-3.5 py-2 text-xs bg-white border border-[#EADFCB] rounded-xl text-stone-900 focus:outline-hidden focus:border-[#A92222]"
+                  />
+                ))}
+              </div>
+
+              <div className="space-y-2 p-4 rounded-xl bg-[#FAF7F2] border border-[#EADFCB]">
+                <div>
+                  <label className="text-xs font-bold text-stone-700 block">Kwaliteitscriteria</label>
+                  <p className="text-[11px] text-stone-500">Vul drie criteria in voor de kwaliteit van je werk.</p>
+                </div>
+                {formQualityCriteria.map((criterion, index) => (
+                  <input
+                    key={`quality-${index}`}
+                    type="text"
+                    value={criterion}
+                    onChange={(event) => setFormQualityCriteria((current) => current.map((item, itemIndex) => itemIndex === index ? event.target.value : item))}
+                    placeholder={`Kwaliteitscriterium ${index + 1}`}
+                    className="w-full px-3.5 py-2 text-xs bg-white border border-[#EADFCB] rounded-xl text-stone-900 focus:outline-hidden focus:border-[#A92222]"
+                  />
+                ))}
               </div>
             </div>
 

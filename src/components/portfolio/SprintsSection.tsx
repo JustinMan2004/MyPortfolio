@@ -14,6 +14,7 @@ interface SprintsSectionProps {
   selectedSprintNumber: number;
   onSelectSprint: (sprintNumber: number) => void;
   onViewSprintDetail: (sprintNumber: number) => void;
+  onToggleSprintComplete: (sprintNumber: number) => void;
 }
 
 export const SprintsSection: React.FC<SprintsSectionProps> = ({
@@ -21,6 +22,7 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
   selectedSprintNumber,
   onSelectSprint,
   onViewSprintDetail,
+  onToggleSprintComplete,
 }) => {
   return (
     <section id="sprints-section" className="space-y-6">
@@ -78,7 +80,7 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
                     ) : (
                       <CircleDashed className="w-3 h-3 text-stone-400" />
                     )}
-                    <span>{sprint.status}</span>
+                    <span>{isCompleted ? 'Voltooid' : 'Gepland'}</span>
                   </span>
                 </div>
 
@@ -114,17 +116,29 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
                   <Calendar className="w-3 h-3" />
                   {sprint.period.split('(')[0]}
                 </span>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onViewSprintDetail(sprint.number);
-                  }}
-                  className="text-[#A92222] hover:text-[#7A1212] inline-flex items-center gap-1 cursor-pointer"
-                >
-                  <span>Bekijk</span>
-                  <ArrowRight className="w-3 h-3" />
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleSprintComplete(sprint.number);
+                    }}
+                    className="text-stone-600 hover:text-[#A92222] cursor-pointer"
+                  >
+                    {isCompleted ? 'Terug naar gepland' : 'Voltooien'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onViewSprintDetail(sprint.number);
+                    }}
+                    className="text-[#A92222] hover:text-[#7A1212] inline-flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>Bekijk</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
               </div>
             </div>
           );
