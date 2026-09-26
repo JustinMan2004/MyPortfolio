@@ -1,0 +1,566 @@
+{
+  "profile": {
+    "name": "Justin Man",
+    "initials": "JM",
+    "study": "Commerciële Economie",
+    "profession": "Accountmanager",
+    "minor": "Futureproof met AI",
+    "schoolYear": "2026 – 2027",
+    "intro": "Welkom op mijn portfolio voor de minor Futureproof met AI. Als student Commerciële Economie onderzoek ik hoe AI het beroep van accountmanager verandert en welke AI-vaardigheden ik daarvoor nodig heb. Per sprint laat ik zien wat ik heb onderzocht, gemaakt en geleerd — met het bewijs erbij.",
+    "whoAmI": "",
+    "whyMinor": "",
+    "ambitions": "",
+    "photoUrl": "",
+    "contact": ""
+  },
+  "sprints": [
+    {
+      "number": 1,
+      "title": "AI-impact op accountmanagement & mijn portfolio",
+      "period": "",
+      "status": "voltooid",
+      "summary": "Sprint 1 stond in het teken van de start van de minor. Ik heb onderzocht welke impact AI heeft op mijn toekomstige beroep als accountmanager, ik ben gaan leren hoe ik AI kan gebruiken voor klantonderzoek en ik heb met Google AI Studio een eigen portfoliowebsite gebouwd. Daarnaast heb ik geleerd hoe ik die website lokaal kan openen, starten en verder aanpassen in Visual Studio Code.",
+      "activities": [
+        "Zelfstandig mijn werkzaamheden voor deze sprint gepland, uitgevoerd en bijgehouden.",
+        "Zelf mijn stories (RS, US en LS) opgesteld en verwerkt in mijn integraal sprintlogboek.",
+        "Onderzoek uitgevoerd naar de impact van AI op accountmanagement: waar AI kan ondersteunen, wat de menselijke kant van het beroep blijft en welke AI-vaardigheden belangrijk worden.",
+        "Met Google AI Studio een eigen portfoliowebsite + online dagboek ontworpen en gebouwd.",
+        "Verschillende tools leren gebruiken en aan elkaar gekoppeld: Google AI Studio, GitHub en Visual Studio Code.",
+        "ChatGPT, Gemini en Perplexity ingezet bij het maken en verbeteren van prompts, het opzoeken van informatie en het krijgen van tips.",
+        "Wanneer ik tijdens het bouwen vastliep, AI-tools gebruikt om zelf oplossingen en uitleg te vinden."
+      ],
+      "feedback": [
+        {
+          "id": "fb-1-1",
+          "date": "2026-09-10",
+          "from": "",
+          "feedback": "",
+          "action": "Nog geen feedback mogen ontvangen: deze dag was ik ziek. In de volgende sprint vraag ik eerder feedback aan medestudenten of mijn coach, zodat ik niet afhankelijk ben van één feedbackmoment."
+        }
+      ],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "V",
+          "argument": "Ik heb onderzocht wat de impact van AI is op mijn toekomstige beroep als accountmanager. Ik heb onderzocht waar AI kan ondersteunen, wat de menselijke kant van het beroep blijft en welke AI-vaardigheden belangrijk worden voor accountmanagers.\n\nBewijs: Verslag Leeruitkomst 1 – AI-impact op het beroep Accountmanager."
+        },
+        "LU2": {
+          "level": "V",
+          "argument": "Ik heb met Google AI Studio een eigen portfoliowebsite + online dagboek ontworpen en gebouwd waarin ik mijn werk, leeruitkomsten en bewijzen kan presenteren. Hiermee heb ik een werkend digitaal product gerealiseerd met behulp van AI.\n\nBewijs: mijn werkende portfoliowebsite, opgenomen als bewijs bij Sprint 1."
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "V",
+          "argument": "Ik heb verschillende AI- en digitale tools toegepast. Met Google AI Studio heb ik mijn portfolio gebouwd, via GitHub heb ik de code opgeslagen en beheerd en in Visual Studio Code heb ik mijn project lokaal geopend en verder bewerkt. Daarnaast heb ik ChatGPT, Gemini en Perplexity gebruikt als ondersteuning bij het maken en verbeteren van prompts, het opzoeken van informatie en het krijgen van tips tijdens het proces.\n\nBewijs: mijn portfoliowebsite, screenshots van Visual Studio Code en mijn gebruikte prompts en AI-tools, toegevoegd bij Sprint 1."
+        },
+        "LU5": {
+          "level": "V",
+          "argument": "Ik heb deze sprint zelfstandig mijn werkzaamheden gepland, uitgevoerd en bijgehouden. Ik heb zelf mijn stories opgesteld en verwerkt in mijn integraal sprintlogboek. Daarnaast heb ik zelfstandig mijn portfoliowebsite gebouwd, verschillende tools leren gebruiken en koppelen en mijn onderzoek naar de impact van AI op accountmanagement uitgevoerd. Wanneer ik tijdens het bouwen vastliep, heb ik AI-tools gebruikt om zelf oplossingen en uitleg te vinden.\n\nBewijs: Integraal Sprint Logboek, onderzoeksverslag AI-impact op accountmanagement, portfoliowebsite en gebruikte prompts."
+        }
+      },
+      "reflection": {
+        "date": "2026-09-16",
+        "learned": "Ik heb geleerd hoe ik met AI een website kan bouwen en hoe Google AI Studio, GitHub en Visual Studio Code samenwerken. Ook heb ik meer geleerd over de invloed van AI op mijn toekomstige beroep als accountmanager.",
+        "keep": "Ik wil blijven leren door zelf dingen uit te proberen en direct toe te passen. Vooral het werken met verschillende AI-tools en vervolgens kijken welke tool het beste werkt voor een bepaalde taak wil ik behouden. Ook wil ik mijn werk per sprint blijven vastleggen, zodat mijn ontwikkeling en bewijs duidelijk terug te zien zijn.",
+        "change": "Tijdens het feedbackmoment was ik ziek, waardoor ik geen feedback heb kunnen ophalen. In de volgende sprint wil ik daarom eerder feedback vragen aan medestudenten of mijn coach, zodat ik niet afhankelijk ben van één feedbackmoment en mijn werk tussentijds kan verbeteren."
+      }
+    },
+    {
+      "number": 2,
+      "title": "",
+      "period": "",
+      "status": "bezig",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    },
+    {
+      "number": 3,
+      "title": "",
+      "period": "",
+      "status": "niet-gestart",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    },
+    {
+      "number": 4,
+      "title": "",
+      "period": "",
+      "status": "niet-gestart",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    },
+    {
+      "number": 5,
+      "title": "",
+      "period": "",
+      "status": "niet-gestart",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    },
+    {
+      "number": 6,
+      "title": "",
+      "period": "",
+      "status": "niet-gestart",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    },
+    {
+      "number": 7,
+      "title": "",
+      "period": "",
+      "status": "niet-gestart",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    },
+    {
+      "number": 8,
+      "title": "",
+      "period": "",
+      "status": "niet-gestart",
+      "summary": "",
+      "activities": [],
+      "feedback": [],
+      "selfEvaluation": {
+        "LU1": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU2": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU3": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU4": {
+          "level": "-",
+          "argument": ""
+        },
+        "LU5": {
+          "level": "-",
+          "argument": ""
+        }
+      },
+      "reflection": {
+        "date": "",
+        "learned": "",
+        "keep": "",
+        "change": ""
+      }
+    }
+  ],
+  "stories": [
+    {
+      "id": "s1-rs1",
+      "sprint": 1,
+      "type": "RS",
+      "title": "AI-impact op het beroep accountmanager",
+      "description": "Als student Commerciële Economie wil ik onderzoeken welke impact AI heeft op het beroep accountmanager, zodat ik weet welke werkzaamheden veranderen en welke AI-vaardigheden ik moet ontwikkelen.",
+      "context": "Als student Commerciële Economie bereid ik me voor op het beroep accountmanager. Ik wil weten hoe AI dit beroep verandert.",
+      "approach": "",
+      "result": "Ik heb onderzocht waar AI kan ondersteunen, wat de menselijke kant van het beroep blijft en welke AI-vaardigheden belangrijk worden voor accountmanagers. Dit is uitgewerkt in het verslag “Leeruitkomst 1 – AI-impact op het beroep Accountmanager”.",
+      "acceptanceCriteria": [
+        "Het onderzoek beschrijft de huidige werkzaamheden van een accountmanager.",
+        "Er wordt onderscheid gemaakt tussen taken die AI overneemt, ondersteunt en niet kan vervangen.",
+        "Minimaal drie AI-toepassingen binnen accountmanagement worden onderzocht en vergeleken: leadgeneratie en leadkwalificatie, voorbereiding van klantgesprekken en gespreksverwerking met CRM-automatisering."
+      ],
+      "qualityCriteria": [
+        "Beweringen worden onderbouwd met bronnen, voorbeelden of resultaten uit de eigen casus.",
+        "Vaste vergelijking: de drie toepassingen worden beoordeeld op tijdwinst, commerciële waarde, gebruiksgemak, betrouwbaarheid en risico’s.",
+        "Beroepsrelevantie: de conclusies worden vertaald naar minimaal vijf concrete AI-vaardigheden voor accountmanagers."
+      ],
+      "outcomes": [
+        "LU1"
+      ]
+    },
+    {
+      "id": "s1-ls1",
+      "sprint": 1,
+      "type": "LS",
+      "title": "AI gebruiken voor klantonderzoek",
+      "description": "Als toekomstige accountmanager wil ik leren hoe ik AI gebruik voor klantonderzoek, zodat ik betrouwbare klantinformatie kan verzamelen.",
+      "context": "",
+      "approach": "",
+      "result": "",
+      "acceptanceCriteria": [
+        "Ik heb minimaal twee AI-tools uitgeprobeerd.",
+        "Ik heb met AI een klantonderzoek uitgevoerd.",
+        "Ik heb mijn prompts en resultaten opgeslagen."
+      ],
+      "qualityCriteria": [
+        "De gevonden informatie komt uit betrouwbare bronnen.",
+        "Belangrijke informatie is gecontroleerd.",
+        "Ik kan uitleggen welke tool en prompt het beste werkte."
+      ],
+      "outcomes": [
+        "LU4"
+      ]
+    },
+    {
+      "id": "s1-us1",
+      "sprint": 1,
+      "type": "US",
+      "title": "Portfoliowebsite bouwen met AI",
+      "description": "Als student wil ik met AI een eigen portfoliowebsite maken, zodat ik mijn werk en bewijzen van de minor op één plek kan verzamelen en presenteren.",
+      "context": "",
+      "approach": "",
+      "result": "Met Google AI Studio heb ik een eigen portfoliowebsite + online dagboek ontworpen en gebouwd waarin ik mijn werk, leeruitkomsten en bewijzen kan presenteren.",
+      "acceptanceCriteria": [
+        "Er is een werkende portfoliowebsite gemaakt met Google AI Studio.",
+        "De website bevat informatie over mijzelf en ruimte voor mijn leeruitkomsten en bewijzen.",
+        "De website kan worden aangepast en aangevuld met nieuwe bewijzen en leeruitkomsten."
+      ],
+      "qualityCriteria": [
+        "De website heeft een duidelijke en overzichtelijke indeling.",
+        "De belangrijkste onderdelen zijn makkelijk terug te vinden.",
+        "De vormgeving en inhoud zijn consistent, zodat de verschillende onderdelen van het portfolio één geheel vormen."
+      ],
+      "outcomes": [
+        "LU2",
+        "LU4"
+      ]
+    },
+    {
+      "id": "s1-ls2",
+      "sprint": 1,
+      "type": "LS",
+      "title": "Mijn AI-website lokaal beheren en aanpassen",
+      "description": "Als student wil ik leren hoe ik mijn AI-gebouwde website via GitHub in Visual Studio Code kan gebruiken, zodat ik mijn code kan bewaren, bekijken en verder kan aanpassen.",
+      "context": "",
+      "approach": "",
+      "result": "Ik heb geleerd hoe Google AI Studio, GitHub en Visual Studio Code samenwerken en heb mijn project lokaal geopend en verder bewerkt in Visual Studio Code.",
+      "acceptanceCriteria": [
+        "Mijn portfolio uit Google AI Studio is gekoppeld aan een GitHub-repository.",
+        "Ik heb het GitHub-project geopend in Visual Studio Code.",
+        "Ik kan mijn website lokaal starten en de bestanden/code bekijken."
+      ],
+      "qualityCriteria": [
+        "De actuele versie van mijn project staat correct opgeslagen in GitHub.",
+        "Ik kan uitleggen waarvoor Google AI Studio, GitHub en Visual Studio Code afzonderlijk worden gebruikt.",
+        "Ik kan aantonen dat het project vanuit Visual Studio Code lokaal werkt."
+      ],
+      "outcomes": [
+        "LU4",
+        "LU5"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1-verslag-lu1",
+      "sprint": 1,
+      "title": "Verslag LU1 – AI-impact op het beroep Accountmanager",
+      "description": "Onderzoeksverslag over de impact van AI op accountmanagement: welke taken AI overneemt of ondersteunt, wat de menselijke kant blijft en welke AI-vaardigheden belangrijk worden.",
+      "date": "",
+      "type": "document",
+      "aiTools": [],
+      "storyIds": [
+        "s1-rs1"
+      ],
+      "outcomes": [
+        "LU1"
+      ],
+      "url": ""
+    },
+    {
+      "id": "e1-portfolio",
+      "sprint": 1,
+      "title": "Portfoliowebsite + online dagboek (Google AI Studio)",
+      "description": "Mijn eerste werkende portfoliowebsite met online dagboek, ontworpen en gebouwd met Google AI Studio, om mijn werk, leeruitkomsten en bewijzen te presenteren.",
+      "date": "",
+      "type": "website",
+      "aiTools": [
+        "Google AI Studio"
+      ],
+      "storyIds": [
+        "s1-us1"
+      ],
+      "outcomes": [
+        "LU2",
+        "LU4"
+      ],
+      "url": ""
+    },
+    {
+      "id": "e1-logboek",
+      "sprint": 1,
+      "title": "Integraal Sprint Logboek",
+      "description": "Mijn logboek voor de minor met per sprint de planning (stories), ontvangen feedback, zelfevaluatie per leeruitkomst en reflectie.",
+      "date": "2026-09-16",
+      "type": "excel",
+      "aiTools": [],
+      "storyIds": [
+        "s1-rs1",
+        "s1-ls1",
+        "s1-us1",
+        "s1-ls2"
+      ],
+      "outcomes": [
+        "LU5"
+      ],
+      "url": "/bewijs/sprint-1/Logboek-Minor-Futureproof-met-AI-Justin-Man.xlsx"
+    },
+    {
+      "id": "e1-vscode",
+      "sprint": 1,
+      "title": "Screenshots van Visual Studio Code",
+      "description": "Screenshots die laten zien dat ik mijn project lokaal heb geopend en gestart in Visual Studio Code.",
+      "date": "",
+      "type": "screenshot",
+      "aiTools": [],
+      "storyIds": [
+        "s1-ls2"
+      ],
+      "outcomes": [
+        "LU4",
+        "LU5"
+      ],
+      "url": ""
+    },
+    {
+      "id": "e1-prompts",
+      "sprint": 1,
+      "title": "Gebruikte prompts en AI-tools",
+      "description": "Overzicht van de prompts die ik heb gebruikt en de AI-tools waarmee ik heb gewerkt.",
+      "date": "",
+      "type": "tekst",
+      "aiTools": [
+        "ChatGPT",
+        "Gemini",
+        "Perplexity",
+        "Google AI Studio"
+      ],
+      "storyIds": [],
+      "outcomes": [
+        "LU4"
+      ],
+      "url": "",
+      "text": ""
+    }
+  ],
+  "tools": [
+    {
+      "id": "t-ai-studio",
+      "name": "Google AI Studio",
+      "category": "AI-tool",
+      "purpose": "Mijn portfoliowebsite + online dagboek ontwerpen en bouwen met AI.",
+      "sprints": [
+        1
+      ]
+    },
+    {
+      "id": "t-chatgpt",
+      "name": "ChatGPT",
+      "category": "AI-tool",
+      "purpose": "Ondersteuning bij het maken en verbeteren van prompts, het opzoeken van informatie en tips tijdens het proces.",
+      "sprints": [
+        1
+      ]
+    },
+    {
+      "id": "t-gemini",
+      "name": "Gemini",
+      "category": "AI-tool",
+      "purpose": "Ondersteuning bij het maken en verbeteren van prompts, het opzoeken van informatie en tips tijdens het proces.",
+      "sprints": [
+        1
+      ]
+    },
+    {
+      "id": "t-perplexity",
+      "name": "Perplexity",
+      "category": "AI-tool",
+      "purpose": "Informatie opzoeken en ondersteuning bij het verbeteren van prompts.",
+      "sprints": [
+        1
+      ]
+    },
+    {
+      "id": "t-vscode",
+      "name": "Visual Studio Code",
+      "category": "Digitale tool",
+      "purpose": "Mijn project lokaal openen, starten en verder bewerken.",
+      "sprints": [
+        1
+      ]
+    }
+  ]
+}
