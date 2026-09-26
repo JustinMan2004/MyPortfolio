@@ -11,7 +11,7 @@ interface QuickAddEvidenceModalProps {
 }
 
 const PRESET_TYPES = [
-  { label: '💻 GitHub Repo', type: 'GitHub Repo' as const, prefix: 'GitHub Repo: ' },
+  { label: '☁️ OneDrive-link', type: 'Andere URL' as const, prefix: '' },
   { label: '🚀 Live Demo / App', type: 'Live Demo' as const, prefix: 'Live Demo: ' },
   { label: '📋 Show & Tell Presentatie', type: 'Presentatie' as const, prefix: 'Presentatie: ' },
   { label: '📄 Verslag / Document', type: 'Document / Verslag' as const, prefix: 'Document: ' },
@@ -28,7 +28,7 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
 }) => {
   const [sprint, setSprint] = useState<number>(initialSprint);
   const [outcomeCode, setOutcomeCode] = useState<string>('LU-2');
-  const [type, setType] = useState<EvidenceLink['type']>('GitHub Repo');
+  const [type, setType] = useState<EvidenceLink['type']>('Andere URL');
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
   const [description, setDescription] = useState('');
@@ -66,8 +66,12 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
           ? 'Onderzoeksverslag'
           : type === 'Live Demo'
           ? 'Werkend Prototype'
-          : type === 'GitHub Repo'
-          ? 'Code Repository'
+          : type === 'Figma / Design'
+          ? 'Figma / Design'
+          : type === 'Video / Demo'
+          ? 'Video'
+          : type === 'Andere URL'
+          ? 'Andere URL'
           : 'Werkend Prototype',
       whatMade: what,
       description: what,
@@ -176,7 +180,7 @@ export const QuickAddEvidenceModal: React.FC<QuickAddEvidenceModalProps> = ({
                 <input
                   type="text"
                   required
-                  placeholder="https://github.com/... of https://..."
+                  placeholder="https://… (bijv. een OneDrive-deellink)"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   className="w-full pl-9 pr-3.5 py-2 text-xs bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#A92222] transition-colors"

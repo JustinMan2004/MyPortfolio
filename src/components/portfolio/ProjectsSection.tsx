@@ -2,7 +2,6 @@ import React from 'react';
 import {
   FolderGit2,
   ExternalLink,
-  Github,
   Check,
   UserCheck,
   Sparkles,
@@ -134,17 +133,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 )}
               </div>
 
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-600 hover:text-stone-900 bg-[#FAF7F2] hover:bg-[#EADFCB]/50 px-3 py-1.5 rounded-xl border border-[#EADFCB] transition-all"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                  <span>Code op GitHub</span>
-                </a>
-              )}
             </div>
           </div>
         ))}

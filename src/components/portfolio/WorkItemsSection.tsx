@@ -11,7 +11,6 @@ import {
   Sparkles,
   Edit3,
   X,
-  Github,
   BookOpen,
   Check,
   Tag,
@@ -30,7 +29,6 @@ interface WorkItemsSectionProps {
 
 const WORK_TYPES: WorkItemType[] = [
   'Werkend Prototype',
-  'Code Repository',
   'Onderzoeksverslag',
   'Show & Tell Presentatie',
   'Figma / Design',
@@ -42,7 +40,6 @@ const WORK_TYPES: WorkItemType[] = [
   'Word-bestand',
   'Afbeelding / screenshot',
   'Video',
-  'GitHub-link',
   'Externe website',
   'Portfoliolink',
   'Andere URL',
@@ -573,18 +570,7 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                       </a>
                     ) : null}
 
-                    {item.githubUrl && (
-                      <a
-                        href={item.githubUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="cursor-pointer inline-flex items-center gap-1 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-2.5 py-1.5 rounded-xl border border-stone-200 transition-colors"
-                        title="GitHub Repository"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span className="hidden sm:inline">GitHub</span>
-                      </a>
-                    )}
+
                   </div>
                 </div>
               </div>
@@ -733,29 +719,16 @@ export const WorkItemsSection: React.FC<WorkItemsSectionProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 <div>
                   <label className="font-bold text-stone-700 block mb-1">
                     Link / Demo URL (optioneel)
                   </label>
                   <input
                     type="text"
-                    placeholder="https://... of #diary"
+                    placeholder="https://… (OneDrive, website) of /bewijs/sprint-1/bestand.pdf"
                     value={formUrl}
                     onChange={(e) => setFormUrl(e.target.value)}
-                    className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
-                  />
-                </div>
-
-                <div>
-                  <label className="font-bold text-stone-700 block mb-1">
-                    GitHub Repo URL (optioneel)
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="https://github.com/..."
-                    value={formGithubUrl}
-                    onChange={(e) => setFormGithubUrl(e.target.value)}
                     className="w-full px-3.5 py-2 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 focus:bg-[#F7F1E8] focus:outline-hidden focus:border-[#941F1F]"
                   />
                 </div>

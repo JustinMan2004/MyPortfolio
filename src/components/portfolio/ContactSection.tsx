@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Mail,
-  Github,
   Linkedin,
   Send,
   CheckCircle2,
@@ -82,28 +81,8 @@ export const ContactSection: React.FC = () => {
                 <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-[#A92222]" />
               </a>
 
-              {/* GitHub */}
-              <a
-                href={STUDENT_PROFILE.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-[#FAF7F2]/80 border border-[#EADFCB] hover:border-stone-400 transition-all group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#F7F1E8] text-stone-900 flex items-center justify-center border border-[#EADFCB]">
-                  <Github className="w-5 h-5" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
-                    GitHub Code Repository
-                  </span>
-                  <span className="text-xs font-semibold text-stone-900 truncate block">
-                    github.com
-                  </span>
-                </div>
-                <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-stone-900" />
-              </a>
-
               {/* LinkedIn */}
+              {STUDENT_PROFILE.linkedinUrl && (
               <a
                 href={STUDENT_PROFILE.linkedinUrl}
                 target="_blank"
@@ -123,12 +102,15 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-blue-700" />
               </a>
+              )}
             </div>
 
-            <div className="pt-2 border-t border-[#EADFCB]/80 flex items-center gap-2 text-xs text-stone-500">
-              <MapPin className="w-4 h-4 text-stone-400" />
-              <span>Locatie: {STUDENT_PROFILE.location} • Actief inzetbaar</span>
-            </div>
+            {STUDENT_PROFILE.location && (
+              <div className="pt-2 border-t border-[#EADFCB]/80 flex items-center gap-2 text-xs text-stone-500">
+                <MapPin className="w-4 h-4 text-stone-400" />
+                <span>Locatie: {STUDENT_PROFILE.location}</span>
+              </div>
+            )}
           </div>
         </div>
 

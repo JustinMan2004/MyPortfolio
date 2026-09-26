@@ -8,13 +8,14 @@ import {
   CircleDashed,
 } from 'lucide-react';
 import { SprintData } from '../../portfolioTypes';
+import { SprintStatusBadge, SprintStatusSelect } from './SprintStatus';
 
 interface SprintsSectionProps {
   sprints: SprintData[];
   selectedSprintNumber: number;
   onSelectSprint: (sprintNumber: number) => void;
   onViewSprintDetail: (sprintNumber: number) => void;
-  onToggleSprintComplete: (sprintNumber: number) => void;
+  onSetSprintStatus: (sprintNumber: number, status: SprintData['status']) => void;
 }
 
 export const SprintsSection: React.FC<SprintsSectionProps> = ({
@@ -22,7 +23,7 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
   selectedSprintNumber,
   onSelectSprint,
   onViewSprintDetail,
-  onToggleSprintComplete,
+  onSetSprintStatus,
 }) => {
   return (
     <section id="sprints-section" className="space-y-6">
@@ -45,8 +46,6 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {sprints.map((sprint) => {
           const isSelected = sprint.number === selectedSprintNumber;
-          const isCompleted = sprint.status === 'Afgerond';
-          const isInProgress = sprint.status === 'In uitvoering';
 
           return (
             <div
@@ -64,24 +63,7 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
                   <span className="font-black text-base text-[#A92222]">
                     Sprint 0{sprint.number}
                   </span>
-                  <span
-                    className={`inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full border ${
-                      isCompleted
-                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                        : isInProgress
-                        ? 'bg-amber-50 text-amber-700 border-amber-200'
-                        : 'bg-stone-50 text-stone-500 border-stone-200'
-                    }`}
-                  >
-                    {isCompleted ? (
-                      <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                    ) : isInProgress ? (
-                      <Clock className="w-3 h-3 text-amber-600" />
-                    ) : (
-                      <CircleDashed className="w-3 h-3 text-stone-400" />
-                    )}
-                    <span>{isCompleted ? 'Voltooid' : 'Gepland'}</span>
-                  </span>
+                  <SprintStatusBadge status={sprint.status} />
                 </div>
 
                 <h3 className="font-bold text-sm text-stone-900 leading-snug">
@@ -114,19 +96,14 @@ export const SprintsSection: React.FC<SprintsSectionProps> = ({
               <div className="pt-2 border-t border-[#EADFCB]/60 flex items-center justify-between text-xs font-semibold">
                 <span className="text-stone-500 flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
-                  {sprint.period.split('(')[0]}
+                  {sprint.period.split('(')[0] || '—'}
                 </span>
                 <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleSprintComplete(sprint.number);
-                    }}
-                    className="text-stone-600 hover:text-[#A92222] cursor-pointer"
-                  >
-                    {isCompleted ? 'Terug naar gepland' : 'Voltooien'}
-                  </button>
+                  <SprintStatusSelect
+                    sprintNumber={sprint.number}
+                    status={sprint.status}
+                    onChange={(status) => onSetSprintStatus(sprint.number, status)}
+                  />
                   <button
                     type="button"
                     onClick={(e) => {

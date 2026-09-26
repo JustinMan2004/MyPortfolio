@@ -90,7 +90,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .evidence-links a, .evidence-reference { display: inline-flex; align-items: center; gap: .3rem; color: var(--accent); font-weight: 800; }
 .detail-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
 .evaluation-row { display: flex; gap: .8rem; padding: .8rem 0; border-top: 1px solid var(--line); }
-.evaluation-row > strong { color: var(--accent); font-size: .8rem; }
+.evaluation-row > strong { flex: 0 0 2.75rem; white-space: nowrap; color: var(--accent); font-size: .8rem; }
 .evaluation-row p { margin: .55rem 0; color: var(--muted); font-size: .75rem; line-height: 1.5; }
 .feedback-note { padding: .8rem 0; border-top: 1px solid var(--line); }
 .feedback-note > span { display: flex; align-items: center; gap: .4rem; color: var(--accent); font-size: .72rem; font-weight: 800; }
@@ -99,6 +99,22 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px; padding: 1.5rem; color: var(--muted); background: var(--surface-soft); border: 1px dashed #c9d7cf; border-radius: .8rem; text-align: center; font-size: .78rem; }
 .empty-state > svg { width: 1.4rem; margin-bottom: .5rem; color: #91ab9e; }
 .empty-state .secondary-button { margin-top: .75rem; }
+
+/* Sprintdetail: stories, werkzaamheden, bewijs, zelfevaluatie en reflectie */
+.placeholder-text, .placeholder-inline { color: #9a948c; font-style: italic; }
+.placeholder-text { font-size: .8rem; }
+.story-description { font-style: italic; }
+.story-field-wide { grid-column: 1 / -1; }
+.criteria-list { list-style: decimal; padding-left: 1.1rem; display: grid; gap: .3rem; }
+.tag-row .tag-outcome { background: var(--accent-soft); color: var(--accent); font-weight: 800; }
+.activity-list { display: grid; gap: .6rem; background: var(--surface); border: 1px solid var(--line); border-radius: .8rem; padding: 1.2rem; }
+.activity-list li { display: flex; gap: .6rem; font-size: .82rem; line-height: 1.6; }
+.activity-list li svg { flex: 0 0 1rem; width: 1rem; height: 1rem; margin-top: .2rem; color: var(--accent); }
+.evidence-meta { margin-top: .35rem; }
+.evidence-meta strong { color: var(--ink); }
+.evaluation-title { display: block; margin-top: .4rem; font-size: .78rem; font-weight: 700; }
+.reflection-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
+.reflection-grid h3 { margin-top: 0; }
 
 @media (max-width: 900px) { .sprint-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
@@ -109,6 +125,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .section-heading, .detail-header { align-items: flex-start; flex-direction: column; }
   .detail-meta { align-items: flex-start; }
   .story-fields { grid-template-columns: 1fr; }
+  .reflection-grid { grid-template-columns: 1fr; }
 }
 
 /* Custom subtle scrollbar */

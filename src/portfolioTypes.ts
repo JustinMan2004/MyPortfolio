@@ -34,6 +34,8 @@ export interface StoryItem {
   acceptanceCriteria?: string[];
   qualityCriteria?: string[];
   status?: 'Gepland' | 'In uitvoering' | 'Afgerond';
+  /** De story zelf, bijv. "Als student wil ik …, zodat …" */
+  description?: string;
 }
 
 export interface ProjectSolution {
@@ -53,7 +55,7 @@ export interface ProjectSolution {
 export interface AIToolItem {
   id: string;
   name: string;
-  category: 'LLM & API' | 'AI Coding & Agents' | 'Design & Prompts' | 'Data & ML';
+  category: 'LLM & API' | 'AI Coding & Agents' | 'Design & Prompts' | 'Data & ML' | 'Ontwikkeltools';
   description: string;
   howApplied: string;
   usedInSprints: number[];
@@ -85,7 +87,33 @@ export interface SprintData {
   period: string;
   summary: string;
   focusAreas: string[];
+  /** Afgerond = Voltooid, In uitvoering = Bezig, Gepland = Nog niet gestart */
   status: 'Afgerond' | 'In uitvoering' | 'Gepland';
+  activities?: string[];
+  feedback?: SprintFeedback[];
+  selfEvaluation?: SelfEvaluation[];
+  reflection?: SprintReflection;
+}
+
+export interface SprintFeedback {
+  date: string;
+  from: string;
+  feedback: string;
+  action: string;
+}
+
+/** Niveau zoals in het logboek: 'V' = voldoende, 'O' = onvoldoende, '-' = niet beoordeeld */
+export interface SelfEvaluation {
+  code: string;
+  level: 'V' | 'O' | '-';
+  argument: string;
+}
+
+export interface SprintReflection {
+  date: string;
+  learned: string;
+  keep: string;
+  change: string;
 }
 
 export type WorkItemType =
@@ -116,6 +144,7 @@ export interface WorkItem {
   howMadeOrTech?: string; // Waarmee / hoe gemaakt (tools/technieken)
   learningOutcomeCodes: string[]; // e.g. ['LU-1', 'LU-2', 'LU-4'] -> gekoppeld aan 1 of meer leeruitkomsten
   learningOutcomeCode?: string; // voor backward compatibility met oudere opgeslagen data
+  storyIds?: string[]; // stories waar dit bewijs bij hoort
   url?: string;
   githubUrl?: string;
   description?: string; // alias/fallback voor whatMade

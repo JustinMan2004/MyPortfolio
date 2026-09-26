@@ -276,7 +276,7 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-stone-700 block">2. Aanpak / User Story *</label>
+                <label className="text-xs font-bold text-stone-700 block">2. Aanpak *</label>
                 <textarea
                   rows={3}
                   required
@@ -500,6 +500,12 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                 {story.title}
               </h3>
 
+              {story.description && (
+                <p className="text-xs md:text-sm italic text-stone-600 leading-relaxed">
+                  “{story.description}”
+                </p>
+              )}
+
               {/* Three Structured Columns: Context, Aanpak/Story, Resultaat */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
                 <div className="p-3.5 bg-[#FAF7F2] rounded-xl border border-[#EADFCB] space-y-1">
@@ -507,16 +513,16 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                     1. Context & Vraagstelling
                   </span>
                   <p className="text-xs text-stone-800 leading-relaxed">
-                    {story.context}
+                    {story.context || <span className="italic text-stone-400">Nog aanvullen</span>}
                   </p>
                 </div>
 
                 <div className="p-3.5 bg-[#FAF7F2] rounded-xl border border-[#EADFCB] space-y-1">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-stone-600 block">
-                    2. Aanpak / User Story
+                    2. Aanpak
                   </span>
                   <p className="text-xs text-stone-800 leading-relaxed font-medium">
-                    {story.approachOrUserStory}
+                    {story.approachOrUserStory || <span className="italic text-stone-400">Nog aanvullen</span>}
                   </p>
                 </div>
 
@@ -525,10 +531,32 @@ export const StoriesSection: React.FC<StoriesSectionProps> = ({
                     3. Uitkomst & Conclusie
                   </span>
                   <p className="text-xs text-emerald-950 leading-relaxed">
-                    {story.outcomeOrConclusion}
+                    {story.outcomeOrConclusion || <span className="italic text-stone-400">Nog aanvullen</span>}
                   </p>
                 </div>
               </div>
+
+              {(!!story.acceptanceCriteria?.length || !!story.qualityCriteria?.length) && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                  {[
+                    ['Acceptatiecriteria', story.acceptanceCriteria],
+                    ['Kwaliteitscriteria', story.qualityCriteria],
+                  ].map(([label, items]) =>
+                    (items as string[] | undefined)?.length ? (
+                      <div key={label as string} className="p-3.5 bg-[#FAF7F2] rounded-xl border border-[#EADFCB] space-y-1.5">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-stone-600 block">
+                          {label as string}
+                        </span>
+                        <ol className="list-decimal pl-4 space-y-1 text-xs text-stone-800 leading-relaxed">
+                          {(items as string[]).map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ol>
+                      </div>
+                    ) : null
+                  )}
+                </div>
+              )}
 
               {/* Linked Learning Outcomes */}
               <div className="pt-2 flex items-center gap-2 text-xs text-stone-500">

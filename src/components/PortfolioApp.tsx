@@ -33,6 +33,7 @@ import {
   saveEvidenceLinks,
   loadSprintStatuses,
   saveSprintStatuses,
+  SprintStatusValue,
 } from '../utils';
 import {
   StudentProfile,
@@ -77,13 +78,13 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
   const [profile, setProfile] = useState<StudentProfile>(() =>
     loadProfile<StudentProfile>(STUDENT_PROFILE)
   );
-  const [stories, setStories] = useState<StoryItem[]>(() => loadStoredStories<StoryItem>([]));
-  const [evidenceLinks, setEvidenceLinks] = useState<EvidenceLink[]>(() => loadEvidenceLinks<EvidenceLink>([]));
-  const [sprintStatuses, setSprintStatuses] = useState<Record<number, boolean>>(() => loadSprintStatuses());
+  const [stories, setStories] = useState<StoryItem[]>(() => loadStoredStories<StoryItem>(STORIES_DATA));
+  const [evidenceLinks, setEvidenceLinks] = useState<EvidenceLink[]>(() => loadEvidenceLinks<EvidenceLink>(INITIAL_EVIDENCE_LINKS));
+  const [sprintStatuses, setSprintStatuses] = useState<Record<number, SprintStatusValue>>(() => loadSprintStatuses());
 
   const sprints = SPRINTS_DATA.map((sprint) => ({
     ...sprint,
-    status: sprintStatuses[sprint.number] ? 'Afgerond' as const : 'Gepland' as const,
+    status: sprintStatuses[sprint.number] ?? sprint.status,
   }));
 
   // Sync with localStorage
@@ -108,10 +109,10 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
     setActiveTab('sprintDetail');
   };
 
-  const handleToggleSprintComplete = (sprintNumber: number) => {
+  const handleSetSprintStatus = (sprintNumber: number, status: SprintStatusValue) => {
     setSprintStatuses((previous) => ({
       ...previous,
-      [sprintNumber]: !previous[sprintNumber],
+      [sprintNumber]: status,
     }));
   };
 
@@ -264,7 +265,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
             storyCount={stories.length}
             onNavigateToSprints={() => setActiveTab('sprints')}
             onSelectSprint={handleSelectSprint}
-            onToggleSprintComplete={handleToggleSprintComplete}
+            onSetSprintStatus={handleSetSprintStatus}
           />
         )}
 
@@ -288,7 +289,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
             feedbacks={FEEDBACK_REFLECTIONS_DATA.filter((item) => item.sprintNumber === selectedSprintFilter)}
             onBack={() => setActiveTab('sprints')}
             onAddEvidence={() => setIsQuickAddOpen(true)}
-            onToggleComplete={() => handleToggleSprintComplete(selectedSprintFilter)}
+            onSetStatus={(status) => handleSetSprintStatus(selectedSprintFilter, status)}
           />
         )}
 
@@ -315,7 +316,7 @@ export const PortfolioApp: React.FC<PortfolioAppProps> = () => {
             onViewSprintDetail={(sprintNum) => {
               handleSelectSprint(sprintNum);
             }}
-            onToggleSprintComplete={handleToggleSprintComplete}
+            onSetSprintStatus={handleSetSprintStatus}
           />
         )}
 

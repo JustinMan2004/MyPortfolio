@@ -103,10 +103,10 @@ export function getTodayDateString(): string {
   return `${year}-${month}-${day}`;
 }
 
-const STORAGE_KEY_PROFILE = 'minor_portfolio_profile_v1';
-const STORAGE_KEY_STORIES = 'minor_portfolio_stories_v2';
-const STORAGE_KEY_EVIDENCE = 'minor_portfolio_evidence_v2';
-const STORAGE_KEY_SPRINT_STATUS = 'minor_portfolio_sprint_status_v1';
+const STORAGE_KEY_PROFILE = 'minor_portfolio_profile_v2';
+const STORAGE_KEY_STORIES = 'minor_portfolio_stories_v3';
+const STORAGE_KEY_EVIDENCE = 'minor_portfolio_evidence_v3';
+const STORAGE_KEY_SPRINT_STATUS = 'minor_portfolio_sprint_status_v2';
 
 export function loadProfile<T>(fallback: T): T {
   try {
@@ -187,7 +187,9 @@ export function saveWorkItems<T>(items: T[]): void {
 export const loadEvidenceLinks = loadWorkItems;
 export const saveEvidenceLinks = saveWorkItems;
 
-export function loadSprintStatuses(): Record<number, boolean> {
+export type SprintStatusValue = 'Afgerond' | 'In uitvoering' | 'Gepland';
+
+export function loadSprintStatuses(): Record<number, SprintStatusValue> {
   try {
     const stored = localStorage.getItem(STORAGE_KEY_SPRINT_STATUS);
     if (!stored) return {};
@@ -198,7 +200,7 @@ export function loadSprintStatuses(): Record<number, boolean> {
   }
 }
 
-export function saveSprintStatuses(statuses: Record<number, boolean>): void {
+export function saveSprintStatuses(statuses: Record<number, SprintStatusValue>): void {
   try {
     localStorage.setItem(STORAGE_KEY_SPRINT_STATUS, JSON.stringify(statuses));
   } catch (err) {

@@ -18,7 +18,7 @@ export const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const categories = ['all', 'LLM & API', 'AI Coding & Agents', 'Design & Prompts', 'Data & ML'];
+  const categories = ['all', ...Array.from(new Set(tools.map((tool) => tool.category)))];
 
   const filteredTools = tools.filter((tool) =>
     selectedCategory === 'all' ? true : tool.category === selectedCategory

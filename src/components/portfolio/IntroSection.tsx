@@ -199,10 +199,12 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 <Calendar className="w-4 h-4 text-amber-300" />
                 <span>Studiejaar {profile.academicYear}</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-black/20 px-3 py-1.5 rounded-xl backdrop-blur-md border border-white/10">
-                <MapPin className="w-4 h-4 text-amber-300" />
-                <span>{profile.location}</span>
-              </div>
+              {profile.location && (
+                <div className="flex items-center gap-1.5 bg-black/20 px-3 py-1.5 rounded-xl backdrop-blur-md border border-white/10">
+                  <MapPin className="w-4 h-4 text-amber-300" />
+                  <span>{profile.location}</span>
+                </div>
+              )}
             </div>
 
             {/* CTA Buttons */}
@@ -538,12 +540,21 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
           {/* Photo */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-3">
             <div className="group relative overflow-hidden rounded-2xl border border-stone-200/90 shadow-md aspect-4/3 sm:aspect-16/11 bg-stone-100">
-              <img
-                src={profile.personalStory?.photoUrl || profile.avatarUrl || 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80'}
-                alt="Persoonlijke sfeerfoto"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-              />
+              {profile.personalStory?.photoUrl || profile.avatarUrl ? (
+                <img
+                  src={profile.personalStory?.photoUrl || profile.avatarUrl}
+                  alt="Persoonlijke sfeerfoto"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#8B1A1A] to-[#B82424] text-white">
+                  <span className="text-5xl font-black">
+                    {profile.name.split(' ').map((n) => n[0]).join('')}
+                  </span>
+                  <span className="text-xs text-white/75">Foto nog toevoegen via “Tekst &amp; Foto&apos;s aanpassen”</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/10 to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 right-4 text-white text-xs">
                 <span className="font-extrabold text-sm block drop-shadow-sm">{profile.name}</span>
@@ -565,7 +576,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 <span>Wie ik ben:</span>
               </span>
               <p className="text-xs sm:text-sm text-stone-800 leading-relaxed font-normal">
-                {profile.personalStory?.whoAmI}
+                {profile.personalStory?.whoAmI || <span className="italic text-stone-400">Nog invullen via “Tekst &amp; Foto&apos;s aanpassen”.</span>}
               </p>
             </div>
 
@@ -577,7 +588,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 <span>Waar ik blij van word:</span>
               </span>
               <p className="text-xs sm:text-sm text-stone-800 leading-relaxed font-normal">
-                {profile.personalStory?.passionsAndJoy}
+                {profile.personalStory?.passionsAndJoy || <span className="italic text-stone-400">Nog invullen via “Tekst &amp; Foto&apos;s aanpassen”.</span>}
               </p>
             </div>
 
@@ -589,7 +600,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 <span>Waarom Futureproof met AI?</span>
               </span>
               <p className="text-xs sm:text-sm text-stone-800 leading-relaxed font-normal">
-                {profile.personalStory?.whyThisMinor}
+                {profile.personalStory?.whyThisMinor || <span className="italic text-stone-400">Nog invullen via “Tekst &amp; Foto&apos;s aanpassen”.</span>}
               </p>
             </div>
           </div>
@@ -612,6 +623,12 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
             {profile.learningGoals.length} Geformuleerde doelen
           </span>
         </div>
+
+        {profile.learningGoals.length === 0 && (
+          <p className="text-xs italic text-stone-400">
+            Nog geen leerdoelen ingevuld. Voeg ze toe via “Mijn profiel &amp; verhaal aanpassen”.
+          </p>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {profile.learningGoals.map((goal, idx) => (

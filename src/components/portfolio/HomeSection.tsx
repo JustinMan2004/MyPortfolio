@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, CircleDashed, Clock, Layers } from 'lucide-react';
+import { ArrowRight, Layers } from 'lucide-react';
 import { SprintData, StudentProfile } from '../../portfolioTypes';
+import { SprintStatusBadge } from './SprintStatus';
 
 interface HomeSectionProps {
   profile: StudentProfile;
@@ -9,7 +10,7 @@ interface HomeSectionProps {
   storyCount: number;
   onNavigateToSprints: () => void;
   onSelectSprint: (sprintNumber: number) => void;
-  onToggleSprintComplete: (sprintNumber: number) => void;
+  onSetSprintStatus: (sprintNumber: number, status: SprintData['status']) => void;
 }
 
 export const HomeSection: React.FC<HomeSectionProps> = ({
@@ -19,7 +20,6 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
   storyCount,
   onNavigateToSprints,
   onSelectSprint,
-  onToggleSprintComplete,
 }) => (
   <section className="portfolio-home space-y-10">
     <div className="home-intro">
@@ -46,8 +46,6 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
 
     <div className="sprint-grid">
       {sprints.map((sprint) => {
-        const isComplete = sprint.status === 'Afgerond';
-        const isActive = sprint.status === 'In uitvoering';
         return (
           <article
             key={sprint.number}
@@ -59,9 +57,7 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
             role="button"
             tabIndex={0}
           >
-            <div className="sprint-card-top"><span>Sprint {sprint.number}</span><button type="button" onClick={(event) => { event.stopPropagation(); onToggleSprintComplete(sprint.number); }} className={`status status-${isComplete ? 'done' : isActive ? 'active' : 'empty'}`}>
-              {isComplete ? <CheckCircle2 /> : isActive ? <Clock /> : <CircleDashed />}{isComplete ? 'Voltooid' : 'Gepland'}
-            </button></div>
+            <div className="sprint-card-top"><span>Sprint {sprint.number}</span><SprintStatusBadge status={sprint.status} /></div>
             <h3>{sprint.title}</h3>
             <p>{sprint.summary}</p>
             <span className="sprint-link">Bekijk sprint <ArrowRight /></span>
