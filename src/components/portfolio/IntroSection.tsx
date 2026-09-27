@@ -22,7 +22,9 @@ import {
   Upload,
   Image as ImageIcon,
 } from 'lucide-react';
+import { Briefcase, GraduationCap as SchoolIcon, Languages, Star } from 'lucide-react';
 import { LearningGoal, StudentProfile } from '../../portfolioTypes';
+import { CV_BACKGROUND } from '../../portfolioData';
 
 interface IntroSectionProps {
   profile: StudentProfile;
@@ -603,6 +605,76 @@ export const IntroSection: React.FC<IntroSectionProps> = ({
                 {profile.personalStory?.whyThisMinor || <span className="italic text-stone-400">Nog invullen via “Tekst &amp; Foto&apos;s aanpassen”.</span>}
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Achtergrond uit mijn cv */}
+      <div className="bg-[#F7F1E8] rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-sm space-y-6">
+        <div className="border-b border-stone-100 pb-5">
+          <div className="flex items-center gap-2 text-[#941F1F] font-bold text-xs uppercase tracking-wider">
+            <Briefcase className="w-4 h-4" />
+            <span>Opleiding &amp; Werkervaring</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-extrabold text-stone-900 mt-1 tracking-tight">
+            Mijn Achtergrond
+          </h2>
+          <p className="text-xs sm:text-sm text-stone-700 leading-relaxed mt-3 max-w-3xl">
+            {CV_BACKGROUND.intro}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {[
+            { label: 'Opleiding', icon: SchoolIcon, items: CV_BACKGROUND.education },
+            { label: 'Werkervaring', icon: Briefcase, items: CV_BACKGROUND.experience },
+          ].map(({ label, icon: Icon, items }) => (
+            <div key={label} className="space-y-3">
+              <h3 className="flex items-center gap-2 text-sm font-bold text-stone-900">
+                <span className="w-7 h-7 rounded-lg bg-[#A92222]/10 text-[#A92222] flex items-center justify-center">
+                  <Icon className="w-4 h-4" />
+                </span>
+                {label}
+              </h3>
+              <ol className="relative border-l-2 border-[#EADFCB] ml-3.5 space-y-4">
+                {items.map((item) => (
+                  <li key={item.title} className="pl-5 relative">
+                    <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-[#A92222] ring-4 ring-[#F7F1E8]" />
+                    <p className="text-[11px] font-semibold text-[#A92222]">{item.period}</p>
+                    <p className="text-sm font-bold text-stone-900 leading-snug">{item.title}</p>
+                    <p className="text-xs font-medium text-stone-500">{item.place}</p>
+                    {item.description && (
+                      <p className="text-xs text-stone-700 leading-relaxed mt-1">{item.description}</p>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div className="md:col-span-2 p-4 rounded-2xl bg-[#FAF7F2] border border-[#EADFCB] space-y-2">
+            <span className="text-xs font-bold text-stone-800 flex items-center gap-2">
+              <Star className="w-3.5 h-3.5 text-amber-600" /> Vaardigheden
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {CV_BACKGROUND.skills.map((skill) => (
+                <span key={skill} className="text-[11px] font-semibold bg-white text-stone-700 px-2.5 py-1 rounded-lg border border-[#EADFCB]">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#EADFCB] space-y-2">
+            <span className="text-xs font-bold text-stone-800 flex items-center gap-2">
+              <Languages className="w-3.5 h-3.5 text-[#A92222]" /> Talen &amp; overig
+            </span>
+            <ul className="text-xs text-stone-700 space-y-1">
+              {[...CV_BACKGROUND.languages, ...CV_BACKGROUND.other].map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

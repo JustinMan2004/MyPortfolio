@@ -20,7 +20,7 @@ export const STUDENT_PROFILE: StudentProfile = {
   name: 'Justin Man',
   title: 'Student Minor Futureproof met AI',
   institution: 'Hogeschool Utrecht',
-  program: 'Commerciële Economie',
+  program: 'Commerciële Economie (HAN)',
   minor: 'Minor Futureproof met AI',
   academicYear: '2026 - 2027',
   bio: 'Welkom op mijn portfolio voor de minor Futureproof met AI. Als student Commerciële Economie onderzoek ik hoe AI het beroep van accountmanager verandert en welke AI-vaardigheden ik daarvoor nodig heb. Per sprint laat ik zien wat ik heb onderzocht, gemaakt en geleerd, met het bewijs erbij.',
@@ -37,6 +37,65 @@ export const STUDENT_PROFILE: StudentProfile = {
     funFacts: [],
   },
   learningGoals: [],
+};
+
+/** Achtergrond uit mijn cv, getoond op de pagina "Over mij". */
+export const CV_BACKGROUND = {
+  intro: 'Ik ben derdejaars student Commerciële Economie met een brede interesse in commerciële en dienstverlenende functies. Ik werk graag met mensen, ben communicatief vaardig en pak nieuwe taken snel op. In mijn werkervaring heb ik geleerd om klantgericht te denken, verantwoordelijkheid te nemen en effectief samen te werken.',
+  education: [
+    {
+      title: 'Minor Artificial Intelligence & Digital Innovation (Futureproof met AI)',
+      place: 'Hogeschool Utrecht',
+      period: 'september 2026 – heden',
+      description: 'Multidisciplinaire minor gericht op het toepassen van AI binnen de toekomstige beroepspraktijk. Ik onderzoek de impact van AI op het commerciële werkveld en ontwikkel praktische AI-oplossingen.',
+    },
+    {
+      title: 'Commerciële Economie (hbo)',
+      place: 'Hogeschool van Arnhem en Nijmegen',
+      period: 'september 2024 – heden',
+      description: 'Brede commerciële opleiding gericht op marketing, sales, ondernemerschap en klantgericht werken, met ervaring in marktonderzoek, klant- en marktanalyses en commerciële adviezen.',
+    },
+    {
+      title: 'HAVO, profiel Economie & Maatschappij',
+      place: 'Christelijk Lyceum Veenendaal',
+      period: 'september 2017 – februari 2022',
+      description: '',
+    },
+  ],
+  experience: [
+    {
+      title: 'Receptiemedewerker',
+      place: 'Feel Fit Center Rhenen',
+      period: 'oktober 2023 – februari 2026',
+      description: 'Eerste aanspreekpunt voor leden en bezoekers van de sportschool en het zwembad: klanten ontvangen en helpen met vragen over abonnementen en diensten, telefoon en e-mail, inschrijvingen en betalingen verwerken en klachten klantgericht oplossen.',
+    },
+    {
+      title: 'Retail support medewerker',
+      place: 'DPD Veenendaal',
+      period: 'mei 2023 – juli 2023',
+      description: 'Ondersteuning van het logistieke proces in het distributiecentrum: contact met pakketpunten en afdelingen, zendingen registreren en controleren, afwijkingen oplossen en klantvragen afhandelen.',
+    },
+    {
+      title: 'Junior vloerspecialist',
+      place: 'Progenta bv, Elst',
+      period: 'juni 2022 – september 2022',
+      description: 'Voorbereiden en afwerken van vloeren, op locatie en in teamverband.',
+    },
+  ],
+  skills: [
+    'Verkoopgesprekken',
+    'Klantenservice',
+    'Klantenondersteuning',
+    'Communicatieve vaardigheden',
+    'Actief luisteren',
+    'Analytisch vermogen',
+    'Samenwerken',
+    'Aanpassingsvermogen',
+    'Betrouwbaar',
+    'Sociaal',
+  ],
+  languages: ['Nederlands – vloeiend', 'Engels – vloeiend'],
+  other: ['Rijbewijs B'],
 };
 
 export const INITIAL_WORK_ITEMS: WorkItem[] = [
